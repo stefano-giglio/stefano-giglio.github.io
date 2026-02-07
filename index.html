@@ -6,16 +6,18 @@
     <title>Stefano Giglio | Yale SOM</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy: #1a2744;
-            --navy-deep: #0f1a2e;
-            --navy-light: #2a3d5e;
+            --navy: #002856;
+            --navy-deep: #001f45;
+            --navy-light: #0e3e6b;
             --blue-accent: #4a7fb5;
             --blue-soft: #6b9fd4;
             --blue-pale: #e8f0f8;
             --blue-wash: #f4f8fc;
+            --warm-accent: #c49a52;
+            --warm-accent-pale: #faf5ec;
             --slate: #64748b;
             --slate-light: #94a3b8;
             --text-primary: #1e293b;
@@ -25,7 +27,7 @@
             --border: #e2e8f0;
             --border-light: #f1f5f9;
             --sidebar-width: 280px;
-            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-display: 'Source Serif 4', Georgia, serif;
             --font-body: 'Source Sans 3', 'Source Sans Pro', sans-serif;
         }
 
@@ -35,13 +37,14 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
+            font-size: 19px;
         }
 
         body {
             font-family: var(--font-body);
-            font-size: 16px;
             line-height: 1.7;
             color: var(--text-primary);
             background: var(--white);
@@ -55,11 +58,12 @@
             left: 0;
             width: var(--sidebar-width);
             height: 100vh;
-            background: var(--navy-deep);
+            background: var(--navy);
             display: flex;
             flex-direction: column;
             z-index: 100;
             overflow-y: auto;
+            font-size: 16px;
         }
 
         .sidebar-header {
@@ -69,7 +73,7 @@
 
         .sidebar-name {
             font-family: var(--font-display);
-            font-size: 1.65rem;
+            font-size: 24px;
             font-weight: 600;
             color: var(--white);
             letter-spacing: 0.01em;
@@ -77,8 +81,8 @@
         }
 
         .sidebar-title {
-            font-size: 0.78rem;
-            color: var(--slate-light);
+            font-size: 0.88rem;
+            color: #a8cfe8;
             margin-top: 0.6rem;
             line-height: 1.5;
             font-weight: 300;
@@ -92,26 +96,27 @@
 
         .sidebar-nav a {
             display: block;
-            padding: 0.55rem 2rem;
-            color: rgba(255,255,255,0.6);
+            padding: 0.55rem 1.5rem;
+            margin: 0.1rem 0.75rem;
+            color: rgba(255,255,255,0.75);
             text-decoration: none;
             font-size: 0.88rem;
             font-weight: 400;
             letter-spacing: 0.03em;
             transition: all 0.25s ease;
-            border-left: 3px solid transparent;
+            border-radius: 6px;
         }
 
         .sidebar-nav a:hover {
             color: rgba(255,255,255,0.95);
-            background: rgba(255,255,255,0.04);
+            background: rgba(255,255,255,0.06);
         }
 
         .sidebar-nav a.active {
             color: var(--white);
-            border-left-color: var(--blue-accent);
-            background: rgba(74,127,181,0.1);
+            background: rgba(196,154,82,0.15);
             font-weight: 500;
+            border-left: 3px solid var(--warm-accent);
         }
 
         .sidebar-footer {
@@ -120,9 +125,9 @@
         }
 
         .sidebar-footer a {
-            color: var(--slate-light);
+            color: rgba(255,255,255,0.75);
             text-decoration: none;
-            font-size: 0.78rem;
+            font-size: 0.88rem;
             transition: color 0.2s;
         }
 
@@ -131,18 +136,18 @@
         }
 
         .sidebar-contact {
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.4);
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.7);
             line-height: 1.7;
         }
 
         .sidebar-contact a {
-            color: var(--blue-soft);
+            color: var(--warm-accent);
             text-decoration: none;
         }
 
         .sidebar-contact a:hover {
-            color: var(--white);
+            color: #e0be78;
         }
 
         /* ===== MOBILE MENU ===== */
@@ -153,7 +158,7 @@
             left: 0;
             right: 0;
             height: 60px;
-            background: var(--navy-deep);
+            background: var(--navy);
             z-index: 200;
             align-items: center;
             justify-content: space-between;
@@ -213,9 +218,9 @@
         }
 
         .content-wrapper {
-            max-width: 820px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 3.5rem 3rem 5rem;
+            padding: 3.5rem 4rem 5rem;
         }
 
         /* ===== HOME / ABOUT ===== */
@@ -231,8 +236,8 @@
         }
 
         .hero-photo img {
-            width: 180px;
-            height: 220px;
+            width: 230px;
+            height: 280px;
             object-fit: cover;
             border-radius: 4px;
             filter: grayscale(10%);
@@ -241,8 +246,8 @@
 
         .hero-info h1 {
             font-family: var(--font-display);
-            font-size: 2.4rem;
-            font-weight: 600;
+            font-size: 2.2rem;
+            font-weight: 400;
             color: var(--navy);
             line-height: 1.15;
             margin-bottom: 0.6rem;
@@ -282,6 +287,16 @@
             transition: all 0.2s ease;
         }
 
+        .hero-links a:first-child {
+            background: var(--blue-pale);
+            color: var(--navy);
+        }
+
+        .hero-links a:first-child:hover {
+            background: var(--blue-accent);
+            color: var(--white);
+        }
+
         .hero-links a:hover {
             background: var(--blue-accent);
             color: var(--white);
@@ -291,7 +306,7 @@
             font-size: 0.95rem;
             color: var(--text-secondary);
             line-height: 1.8;
-            border-left: 3px solid var(--blue-accent);
+            border-left: 3px solid var(--warm-accent);
             padding-left: 1.25rem;
             margin: 2rem 0;
         }
@@ -325,8 +340,8 @@
 
         .subsection-title {
             font-family: var(--font-display);
-            font-size: 1.45rem;
-            font-weight: 600;
+            font-size: 1.3rem;
+            font-weight: 400;
             color: var(--navy);
             margin: 2.5rem 0 1.25rem;
             padding-bottom: 0.5rem;
@@ -339,9 +354,11 @@
 
         /* ===== PAPER LIST ===== */
         .paper {
-            margin-bottom: 1.75rem;
-            padding-bottom: 1.75rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
             border-bottom: 1px solid var(--border-light);
+            padding-left: 1.8rem;
+            position: relative;
         }
 
         .paper:last-child {
@@ -349,21 +366,25 @@
         }
 
         .paper-number {
-            font-size: 0.72rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--blue-accent);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 0.25rem;
+        }
+
+        .paper:first-child {
+            margin-top: 1.5rem;
         }
 
         .paper-title {
-            font-family: var(--font-display);
-            font-size: 1.15rem;
+            display: inline;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--navy);
-            line-height: 1.35;
-            margin-bottom: 0.3rem;
+            line-height: 1.45;
         }
 
         .paper-title a {
@@ -377,26 +398,21 @@
         }
 
         .paper-authors {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--slate);
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.1rem;
         }
 
         .paper-journal {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--blue-accent);
         }
 
         .paper-award {
-            display: inline-block;
-            margin-top: 0.35rem;
-            font-size: 0.76rem;
-            color: var(--blue-accent);
+            display: inline;
+            font-size: 0.84rem;
+            color: var(--warm-accent);
             font-weight: 500;
-            padding: 0.15rem 0.5rem;
-            background: var(--blue-pale);
-            border-radius: 2px;
         }
 
         .paper-links {
@@ -491,7 +507,7 @@
             background: var(--blue-wash);
             border-radius: 4px;
             margin-bottom: 1rem;
-            border-left: 3px solid var(--blue-accent);
+            border-left: 3px solid var(--warm-accent);
         }
 
         .data-card-title {
@@ -588,6 +604,15 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 900px) {
+            html {
+                font-size: 16px;
+            }
+
+            html, body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+
             .sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease;
@@ -595,6 +620,7 @@
 
             .sidebar.open {
                 transform: translateX(0);
+                z-index: 200;
             }
 
             .mobile-header {
@@ -604,10 +630,14 @@
             .main {
                 margin-left: 0;
                 padding-top: 60px;
+                width: 100%;
             }
 
             .content-wrapper {
-                padding: 2rem 1.5rem 4rem;
+                padding: 2rem 1.25rem 4rem;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
             }
 
             .hero {
@@ -616,12 +646,35 @@
             }
 
             .hero-photo img {
-                width: 140px;
-                height: 170px;
+                width: 180px;
+                height: 220px;
             }
 
             .hero-info h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+            }
+
+            .hero-role {
+                font-size: 0.85rem;
+                word-wrap: break-word;
+            }
+
+            .about-text {
+                font-size: 0.9rem;
+                padding-left: 0.75rem;
+            }
+
+            .hero-links {
+                gap: 0.5rem;
+            }
+
+            .hero-links a {
+                padding: 0.35rem 0.75rem;
+                font-size: 0.78rem;
+            }
+
+            .content-wrapper * {
+                max-width: 100%;
             }
 
             .contact-grid {
@@ -661,17 +714,19 @@
         <div class="sidebar-name">Stefano Giglio</div>
         <div class="sidebar-title">
             Frederic D. Wolfe Professor<br>
-            of Finance &amp; Management<br>
+            of Finance, Management,<br>
+            and Entrepreneurship<br>
             Yale School of Management
         </div>
     </div>
     <div class="sidebar-nav">
         <a href="#home" class="active" onclick="showSection('home', this)">Home</a>
-        <a href="#research" onclick="showSection('research', this)">Research</a>
+        <a href="#working-papers" onclick="showSection('working-papers', this)">Working Papers</a>
+        <a href="#publications" onclick="showSection('publications', this)">Publications</a>
         <a href="#data" onclick="showSection('data', this)">Data &amp; Code</a>
         <a href="#discussions" onclick="showSection('discussions', this)">Discussions</a>
         <a href="#teaching" onclick="showSection('teaching', this)">Teaching</a>
-        <a href="#contact" onclick="showSection('contact', this)">Contact &amp; CV</a>
+        <a href="#contact" onclick="showSection('contact', this)">Contact</a>
     </div>
     <div class="sidebar-footer">
         <div class="sidebar-contact">
@@ -692,12 +747,11 @@
         <div class="content-wrapper">
             <div class="hero">
                 <div class="hero-photo">
-                    <!-- Replace with your photo: save as images/headshot.jpg -->
-                    <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkduD0DWV2eZ1sodzsT_YGMFeTYjRLNZHMyOOA3KC4zm6hX9omO3dz7DcXPSAGIYDIwoHMtefLOJCniUj7dTBkKxbhz08BRQGN2yV4pa0eKpBor_vyyNEOYFKm7z24vyJN8jnWqC5mUQGCkEna-I7iBXjM7wLVOmSmN3abYxwZLdsgKYrE1S8f0-83pnU7dAE0tqdKC-eglWEHusCTMOEcBYGJ6L_AY0=w1280" alt="Stefano Giglio">
+                    <img src="images/sg.jpg" alt="Stefano Giglio">
                 </div>
                 <div class="hero-info">
                     <h1>Stefano Giglio</h1>
-                    <div class="hero-role">Frederic D. Wolfe Professor of Finance &amp; Management</div>
+                    <div class="hero-role">Frederic D. Wolfe Professor of Finance, Management, and Entrepreneurship</div>
                     <div class="hero-affiliations">
                         Yale School of Management<br>
                         NBER Research Associate<br>
@@ -712,84 +766,84 @@
             </div>
 
             <div class="about-text">
-                My research spans <strong>asset pricing</strong>, <strong>climate finance</strong>, <strong>macro-finance</strong>, and <strong>expectations formation</strong>. I am particularly interested in long-run discount rates, risk premia, biodiversity and climate risk, and the role of beliefs in financial markets. At Yale SOM, I teach courses on speculation and hedging, investment management, ESG investing, and asset pricing theory.
+                I am a financial economist working on <strong>asset pricing</strong> and <strong>climate finance</strong>, with a particular focus on how financial markets allow investors to manage and mitigate aggregate risks. I am the Frederic D. Wolfe Professor of Finance, Management, and Entrepreneurship at <a href="https://som.yale.edu/" target="_blank">Yale School of Management</a>, a Research Associate at the <a href="https://www.nber.org/" target="_blank">NBER</a>, and a Research Affiliate at <a href="https://cepr.org/" target="_blank">CEPR</a>. I received a Bachelor's and Master's degree from Bocconi University, and a Ph.D. from Harvard University.
             </div>
 
-            <h2 class="subsection-title">Research Interests</h2>
-            <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.8;">
-                Asset pricing, climate finance and ESG investing, biodiversity and natural capital, long-run discount rates, macro-finance, expectations and belief formation, financial risk and volatility, econometric methods for factor models.
-            </p>
+            <div class="hero-links" style="margin-top: 1.5rem;">
+                <a href="#working-papers" onclick="showSection('working-papers', document.querySelector('[href=\'#working-papers\']'))">Working Papers</a>
+                <a href="#publications" onclick="showSection('publications', document.querySelector('[href=\'#publications\']'))">Publications</a>
+            </div>
         </div>
     </div>
 
-    <!-- RESEARCH -->
-    <div class="section" id="research">
+    <!-- WORKING PAPERS -->
+    <div class="section" id="working-papers">
         <div class="content-wrapper">
-            <h1 class="section-title">Research</h1>
-            <p class="section-subtitle">Papers are linked as PDFs. For working papers, the latest version is available below.</p>
-
-            <h2 class="subsection-title">Working Papers</h2>
+            <h1 class="section-title">Working Papers</h1>
 
             <div class="paper">
-                <div class="paper-title"><a href="papers/giglio-dew-becker-molavi-2024.pdf">The Dependence of Belief Dynamics on Beliefs: Implications for Stock Returns</a></div>
-                <div class="paper-authors">with Ian Dew-Becker and Pooya Molavi, October 2024</div>
+                <div class="paper-title"><a href="papers/giglio-dew-becker-molavi-2026.pdf">Using Density Forecasts to Measure the Stability of Inflation Expectations</a></div>
+                <div class="paper-authors">with Ian Dew-Becker and Pooya Molavi, February 2026</div>
                 <div class="paper-links">
-                    <a href="papers/giglio-dew-becker-molavi-2024.pdf">PDF</a>
                     <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
                 </div>
-                <div class="paper-abstract">This paper studies the implications of a simple theorem, which states that for arbitrary underlying dynamics, the cumulants of Bayesian beliefs have a recursive structure: the sensitivity of the mean to news is proportional to the variance; the sensitivity of the nth cumulant to news is proportional to the (n+1)th. The specific application is the US aggregate stock market. The model qualitatively and quantitatively generates a range of observed features of the data: negative skewness and positive excess kurtosis in stock returns, positive skewness and kurtosis and long memory in volatility, a negative relationship between returns and volatility changes, and predictable variation in the strength of that relationship.</div>
+                <div class="paper-abstract">The anchoring of inflation expectations is a major objective of modern monetary policy. This paper estimates variation over time in the sensitivity of inflation expectations to news. The function describing the response of an agent's expectations to news is fundamentally unobservable since on a given date we only see the single realization of news that actually occurred. However, under the assumption that agents apply Bayes' rule and that they believe their signals are Gaussian (hence allowing for a wide range of behavioral biases), the marginal response of expectations to signals is proportional to agents' uncertainty about future inflation. Empirically, both in the time-series and the cross-section, reported uncertainty both contemporaneously explains and also predicts the future sensitivity of expectations to news. The results imply that as of 2025, inflation expectations are 2–3 times more sensitive to news than prior to 2020.</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-title"><a href="papers/giglio-dew-becker-molavi-2025.pdf">Learning and the Emergence of Nonlinearity in Financial Markets</a></div>
+                <div class="paper-authors">with Ian Dew-Becker and Pooya Molavi, December 2025</div>
+                <div class="paper-links">
+                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+                </div>
+                <div class="paper-abstract">Financial markets (and more generally the real economy) display a wide range of important nonlinearities. This paper focuses on stock returns, which are skewed left – generating crashes – and whose volatility moves over time, is itself skewed, is strongly related to the level of prices, and displays long memory. This paper shows that such behavior is almost inevitable when prices are formed by investors acquiring information about the true, but latent, value of stocks. It studies a general model of filtering in which agents receive signals about the fundamental value of the stock market and dynamically update their beliefs (potentially with biases). When those beliefs are non-normal and investors believe crashes can happen, prices generically display the range of nonlinearities observed in the data. While the model does not explain where crashes come from, it shows that investors believing that prices can crash is sufficient to generate the rich higher-order dynamics observed empirically. In a simple calibration with iid shocks to fundamentals, the model fits well quantitatively, and regression-based tests support the model's mechanism.</div>
             </div>
 
             <div class="paper">
                 <div class="paper-title"><a href="papers/acharya-giglio-pastore-stroebel-tan-yong-2025.pdf">Climate Transition Risks and the Energy Sector</a></div>
                 <div class="paper-authors">with Viral Acharya, Stefano Pastore, Johannes Stroebel, Zhenhao Tan, and Tiffany Yong, January 2025</div>
                 <div class="paper-links">
-                    <a href="papers/acharya-giglio-pastore-stroebel-tan-yong-2025.pdf">PDF</a>
                     <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
                 </div>
-                <div class="paper-abstract">We build a general equilibrium model to study how climate transition risks affect energy prices and the valuations of different firms in the energy sector. We consider two types of fossil fuel firms: incumbents that have developed oil reserves they can extract today or tomorrow, and new entrants that must invest in exploration and drilling today. We analyze three sources of climate transition risk and show that the different transition risks have distinct effects on firms' decisions, on their valuations, and on equilibrium energy prices.</div>
+                <div class="paper-abstract">We build a general equilibrium model to study how climate transition risks affect energy prices and the valuations of different firms in the energy sector. We consider two types of fossil fuel firms: incumbents that have developed oil reserves they can extract today or tomorrow, and new entrants that must invest in exploration and drilling today to have reserves to potentially extract tomorrow. There are also renewable energy firms that produce emission-free energy but cannot currently serve non-electrifiable sectors of the economy. We analyze three sources of climate transition risk: (i) changes in the probability of a technological breakthrough that allows renewable energy firms to serve all economic sectors; (ii) changes in expected future taxes on carbon emissions; and (iii) restrictions on today's development of additional fossil fuel production capacity. We show that the different transition risks—and, importantly, uncertainty about their realizations—have distinct effects on firms' decisions, on their valuations, and on equilibrium energy prices. We provide empirical support for the heterogeneous effects of different transition risks on energy prices and stock returns of firms in different energy sub-sectors.</div>
             </div>
 
             <div class="paper">
                 <div class="paper-title"><a href="papers/giglio-kuchler-stroebel-wang-2025.pdf">The Economics of Biodiversity Loss</a></div>
                 <div class="paper-authors">with Theresa Kuchler, Johannes Stroebel, and Olivier Wang, September 2025</div>
                 <div class="paper-links">
-                    <a href="papers/giglio-kuchler-stroebel-wang-2025.pdf">PDF</a>
                     <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
                 </div>
-                <div class="paper-abstract">We explore the economic effects of biodiversity loss by developing an ecologically-founded model of how different species interact to deliver the ecosystem services that contribute to economic production. We derive an expression for the fragility of ecosystems and economic output to further biodiversity loss, and show that it increases with both mean species losses as well as the imbalance of species losses across ecosystem functions.</div>
+                <div class="paper-abstract">We explore the economic effects of biodiversity loss by developing an ecologically-founded model of how different species interact to deliver the ecosystem services that contribute to economic production. Ecosystem services are produced by combining several complementary ecosystem functions such as pollination and water filtration, which are each provided by several substitutable species. It follows that economic output is an increasing but concave function of species richness, and the economic cost of losing a species depends on: (i) how many redundant species remain within its ecosystem function, and (ii) how critical the affected function is for ecosystem productivity. We derive an expression for the fragility of ecosystems and economic output to further biodiversity loss, and show that it increases with both mean species losses as well as the imbalance of species losses across ecosystem functions. Consistent with the model, we illustrate that empirical measures of these components of ecosystem fragility are reflected in market assessments of risk in the cross-section of countries, which we extract from the prices of sovereign credit default swaps. We conclude by embedding our model of ecosystem services production in an intertemporal planning problem and study optimal land use when allocating land to production raises output at the cost of reducing biodiversity.</div>
             </div>
 
             <div class="paper">
-                <div class="paper-title"><a href="papers/giglio-xiu-zhang-2023.pdf">Prediction When Factors are Weak</a></div>
+                <div class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4397485" target="_blank">Prediction When Factors are Weak</a></div>
                 <div class="paper-authors">with Dacheng Xiu and Dake Zhang, March 2023</div>
                 <div class="paper-links">
-                    <a href="papers/giglio-xiu-zhang-2023.pdf">PDF</a>
                     <a href="papers/giglio-xiu-zhang-2023-supplement.pdf">Supplement</a>
                     <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
                 </div>
-                <div class="paper-abstract">In macroeconomic forecasting, principal component analysis (PCA) has been the most prevalent approach to the recovery of factors. To incorporate information from weaker factors, we propose a new prediction procedure based on supervised PCA, which iterates over selection, PCA, and projection. Our empirical analysis highlights the role of weak factors in predicting inflation, industrial production growth, and changes in unemployment.</div>
+                <div class="paper-abstract">In macroeconomic forecasting, principal component analysis (PCA) has been the most prevalent approach to the recovery of factors, which summarize information in a large set of macro predictors. Nevertheless, the theoretical justification of this approach often relies on a convenient and critical assumption that factors are pervasive. To incorporate information from weaker factors, we propose a new prediction procedure based on supervised PCA, which iterates over selection, PCA, and projection. The selection step finds a subset of predictors most correlated with the prediction target, whereas the projection step permits multiple weak factors of distinct strength. We justify our procedure in an asymptotic scheme where both the sample size and the cross-sectional dimension increase at potentially different rates. Our empirical analysis highlights the role of weak factors in predicting inflation, industrial production growth, and changes in unemployment.</div>
             </div>
 
             <div class="paper">
                 <div class="paper-title"><a href="papers/campbell-giglio-polk-2023.pdf">What Drives Booms and Busts in Value?</a></div>
                 <div class="paper-authors">with John Campbell and Christopher Polk, November 2023</div>
                 <div class="paper-links">
-                    <a href="papers/campbell-giglio-polk-2023.pdf">PDF</a>
-                    <a href="papers/campbell-giglio-polk-2023-appendix.pdf">Online Appendix</a>
+                    <a href="https://drive.google.com/file/d/1Jp3fO7XATWEHKf3Cfo_xAL7dHns5iHBV/view?usp=drive_link" target="_blank">Online Appendix</a>
                     <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
                 </div>
-                <div class="paper-abstract">Value investing delivers volatile returns, with large drawdowns during both market booms and busts. This paper interprets these returns through an intertemporal CAPM, which predicts that aggregate cash flow, discount rate, and volatility news all move value returns. We document that indeed these shocks explain a large fraction of quarterly value returns over the last 60 years.</div>
+                <div class="paper-abstract">Value investing delivers volatile returns, with large drawdowns during both market booms and busts. This paper interprets these returns through an intertemporal CAPM, which predicts that aggregate cash flow, discount rate, and volatility news all move value returns. We document that indeed these shocks explain a large fraction of quarterly value returns over the last 60 years. We also distinguish between the intra-industry and inter-industry components of value, showing that the ICAPM explains the former better. Finally, we develop a novel methodology to perform this decomposition at the daily frequency, using it to interpret value returns during the Covid-19 pandemic.</div>
             </div>
 
             <div class="paper">
                 <div class="paper-title"><a href="papers/dew-becker-giglio-2024.pdf">The Decline of the Variance Risk Premium: Evidence from Traded and Synthetic Options</a></div>
                 <div class="paper-authors">with Ian Dew-Becker, July 2024</div>
                 <div class="paper-links">
-                    <a href="papers/dew-becker-giglio-2024.pdf">PDF</a>
                     <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
                 </div>
-                <div class="paper-abstract">The historical returns on equity index options are well known to be strikingly negative. This paper shows that over the last 15 years, the returns of traded options have become significantly less negative, to the point that their CAPM alpha is now statistically indistinguishable from zero. We also build dynamically replicated, or synthetic, options, and show that over the period 1926–2022 they always had zero alpha.</div>
+                <div class="paper-abstract">The historical returns on equity index options are well known to be strikingly negative, with large negative CAPM alphas. That is typically explained either by investors having convex marginal utility over stock returns (e.g. crash/variance aversion) or by intermediaries demanding a premium for hedging risk. This paper shows that over the last 15 years, the returns of traded options have become significantly less negative, to the point that their CAPM alpha (and, relatedly, that of the variance risk premium) is now statistically indistinguishable from zero. We also build dynamically replicated, or synthetic, options, and show that over the period 1926–2022 they always had zero alpha. To explain these facts, the paper develops a model where the negative alpha of traded options between the late 80s and the early 2000s was driven by the risk that intermediaries in the options market had to bear; those alphas did not reflect the risk preferences of the average equity investor. Instead, synthetic options, based entirely on the price of the equity index, directly reflect the representative investor's risk preferences: those show that the average investor never, over the last century, required high risk compensation for market downturns. Over time, as the quantity of risk borne by intermediaries declined, the risk premium of the traded options converged to those of the synthetic options. We provide empirical evidence on risk exposures of dealers consistent with the model.</div>
             </div>
 
             <div class="paper">
@@ -797,118 +851,357 @@
                 <div class="paper-authors">April 2014</div>
                 <div class="paper-award">Runner-up, Ieke van den Burg Prize for Research on Systemic Risk, 2015</div>
                 <div class="paper-links">
-                    <a href="papers/giglio-2014-cds.pdf">PDF</a>
                     <a href="papers/giglio-2014-cds-appendix.pdf">Online Appendix</a>
                     <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
                 </div>
-                <div class="paper-abstract">This paper measures the joint default risk of financial institutions by exploiting information about counterparty risk in credit default swaps (CDS). A CDS contract written by a bank to insure against the default of another bank is exposed to the risk that both banks default. From CDS spreads we can then learn about the joint default risk of pairs of banks.</div>
+                <div class="paper-abstract">This paper measures the joint default risk of financial institutions by exploiting information about counterparty risk in credit default swaps (CDS). A CDS contract written by a bank to insure against the default of another bank is exposed to the risk that both banks default. From CDS spreads we can then learn about the joint default risk of pairs of banks. From bond prices we can learn the individual default probabilities. Since knowing individual and pairwise probabilities is not sufficient to fully characterize multiple default risk, I derive the tightest bounds on the probability that many banks fail simultaneously.</div>
             </div>
 
-            <h2 class="subsection-title">Publications</h2>
+        </div>
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <div class="section" id="publications">
+        <div class="content-wrapper">
+            <h1 class="section-title">Publications</h1>
 
             <div class="paper">
-                <div class="paper-number">35</div>
+                <div class="paper-number">35.</div>
                 <div class="paper-title"><a href="papers/alekseev-giglio-maingi-selgrad-stroebel-2024.pdf">A Quantity-Based Approach to Constructing Climate Risk Hedge Portfolios</a></div>
                 <div class="paper-authors">with Georgij Alekseev, Quinn Maingi, Julia Selgrad, and Johannes Stroebel</div>
-                <div class="paper-journal">Journal of Finance, forthcoming</div>
-                <div class="paper-award">Best Paper in Asset Pricing, 2022 SFS Cavalcade</div>
-                <div class="paper-award">Two Sigma Award, Best Paper on Investment Management, 2022 WFA</div>
-                <div class="paper-links">
-                    <a href="papers/alekseev-giglio-maingi-selgrad-stroebel-2024.pdf">PDF</a>
-                </div>
+                <div class="paper-journal"><strong>Journal of Finance</strong>, forthcoming</div>
+                <div class="paper-award">Best Paper in Asset Pricing, 2022 SFS Cavalcade; Two Sigma Award, 2022; Best Paper on Investment Management, 2022 WFA</div>
             </div>
 
             <div class="paper">
-                <div class="paper-number">34</div>
+                <div class="paper-number">34.</div>
                 <div class="paper-title"><a href="papers/giglio-kuchler-stroebel-wang-jfip.pdf">Nature and Biodiversity Loss: A Research Agenda for Financial Economics</a></div>
                 <div class="paper-authors">with Theresa Kuchler, Johannes Stroebel, and Olivier Wang</div>
-                <div class="paper-journal">Journal of Finance: Insights and Perspectives, forthcoming</div>
-                <div class="paper-links"><a href="papers/giglio-kuchler-stroebel-wang-jfip.pdf">PDF</a></div>
+                <div class="paper-journal"><strong>Journal of Finance: Insights and Perspectives</strong>, forthcoming</div>
             </div>
 
             <div class="paper">
-                <div class="paper-number">33</div>
+                <div class="paper-number">33.</div>
                 <div class="paper-title"><a href="papers/giglio-maggiori-rillo-stroebel-utkus-xu.pdf">Investor Beliefs and Expectation Formation</a></div>
                 <div class="paper-authors">with Matteo Maggiori, Joachim Rillo, Johannes Stroebel, Steve Utkus, and Xiao Xu</div>
-                <div class="paper-journal">Annual Review of Financial Economics, forthcoming</div>
-                <div class="paper-links"><a href="papers/giglio-maggiori-rillo-stroebel-utkus-xu.pdf">PDF</a></div>
+                <div class="paper-journal"><strong>Annual Review of Financial Economics</strong>, forthcoming</div>
             </div>
 
             <div class="paper">
-                <div class="paper-number">32</div>
+                <div class="paper-number">32.</div>
                 <div class="paper-title"><a href="papers/giglio-kuchler-stroebel-zeng-2023.pdf">Biodiversity Risk</a></div>
                 <div class="paper-authors">with Theresa Kuchler, Johannes Stroebel, and Xuran Zeng</div>
-                <div class="paper-journal">Review of Finance (Special Issue for Biodiversity and Natural Resource Finance), forthcoming</div>
-                <div class="paper-award">Northwestern University Moskowitz Prize for sustainable finance research, 2023</div>
-                <div class="paper-award">Berkeley Haas Sustainable Business Research Prize, 2023</div>
+                <div class="paper-journal"><strong>Review of Finance</strong> (Special Issue for Biodiversity and Natural Resource Finance), forthcoming</div>
+                <div class="paper-award">Northwestern University Moskowitz Prize for sustainable finance research, 2023; Berkeley Haas Sustainable Business Research Prize, 2023</div>
                 <div class="paper-links">
-                    <a href="papers/giglio-kuchler-stroebel-zeng-2023.pdf">PDF</a>
                     <a href="http://www.biodiversityrisk.org/" target="_blank">Data</a>
                 </div>
             </div>
 
             <div class="paper">
-                <div class="paper-number">31</div>
+                <div class="paper-number">31.</div>
                 <div class="paper-title"><a href="papers/giglio-kuchler-stroebel-wang-aer-pp-2025.pdf">Nature Loss and Climate Change: the Twin-Crises Multiplier</a></div>
                 <div class="paper-authors">with Theresa Kuchler, Johannes Stroebel, and Olivier Wang</div>
-                <div class="paper-journal">AEA Papers and Proceedings (2025), 115: 409–414</div>
-                <div class="paper-links"><a href="papers/giglio-kuchler-stroebel-wang-aer-pp-2025.pdf">PDF</a></div>
+                <div class="paper-journal"><strong>AEA Papers and Proceedings</strong> (2025), 115: 409–414</div>
             </div>
 
             <div class="paper">
-                <div class="paper-number">30</div>
+                <div class="paper-number">30.</div>
                 <div class="paper-title"><a href="papers/giglio-maggiori-stroebel-tan-utkus-xu-2025.pdf">Four Facts about ESG Beliefs and Investor Portfolios</a></div>
                 <div class="paper-authors">with Matteo Maggiori, Johannes Stroebel, Zhenhao Tan, Stephen Utkus, and Xiao Xu</div>
-                <div class="paper-journal">Journal of Financial Economics (2025), 164</div>
-                <div class="paper-award">Northwestern University Moskowitz Prize (honorable mention)</div>
-                <div class="paper-links"><a href="papers/giglio-maggiori-stroebel-tan-utkus-xu-2025.pdf">PDF</a></div>
+                <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2025), 164</div>
+                <div class="paper-award">Northwestern University Moskowitz Prize for sustainable finance research (honorable mention)</div>
             </div>
 
             <div class="paper">
-                <div class="paper-number">29</div>
+                <div class="paper-number">29.</div>
                 <div class="paper-title"><a href="papers/giglio-xiu-zhang-jf-2025.pdf">Test Assets and Weak Factors</a></div>
                 <div class="paper-authors">with Dacheng Xiu and Dake Zhang</div>
-                <div class="paper-journal">Journal of Finance (2025), 80(1), 259–319</div>
+                <div class="paper-journal"><strong>Journal of Finance</strong> (2025), 80(1), 259–319</div>
                 <div class="paper-links">
-                    <a href="papers/giglio-xiu-zhang-jf-2025.pdf">PDF</a>
-                    <a href="code/test-assets-weak-factors.zip">Code</a>
+                    <a href="https://drive.google.com/file/d/1ps61ntDVlFTCVys-s8vc5I0oJNfIJkf9/view?usp=sharing" target="_blank">Code</a>
                 </div>
             </div>
 
             <div class="paper">
-                <div class="paper-number">28</div>
+                <div class="paper-number">28.</div>
                 <div class="paper-title"><a href="papers/dew-becker-giglio-arfe-2024.pdf">Recent Developments in Financial Risk and the Real Economy</a></div>
                 <div class="paper-authors">with Ian Dew-Becker</div>
-                <div class="paper-journal">Annual Review of Financial Economics (2024), 16(4): 1–22</div>
-                <div class="paper-links"><a href="papers/dew-becker-giglio-arfe-2024.pdf">PDF</a></div>
+                <div class="paper-journal"><strong>Annual Review of Financial Economics</strong> (2024), 16(4): 1–22</div>
             </div>
 
             <div class="paper">
-                <div class="paper-number">27</div>
-                <div class="paper-title"><a href="papers/giglio-kelly-kozak-jf-2024.pdf">Equity Term Structures without Dividend Strips Data</a></div>
+                <div class="paper-number">27.</div>
+                <div class="paper-title"><a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/jofi.13394" target="_blank">Equity Term Structures without Dividend Strips Data</a></div>
                 <div class="paper-authors">with Bryan Kelly and Serhiy Kozak</div>
-                <div class="paper-journal">Journal of Finance (2024), 79(6)</div>
+                <div class="paper-journal"><strong>Journal of Finance</strong> (2024), 79(6)</div>
                 <div class="paper-links">
-                    <a href="papers/giglio-kelly-kozak-jf-2024.pdf">PDF</a>
                     <a href="#data" onclick="showSection('data', document.querySelector('[href=\'#data\']'))">Data</a>
                 </div>
             </div>
 
             <div class="paper">
-                <div class="paper-number">26</div>
-                <div class="paper-title"><a href="papers/dew-becker-giglio-aej-2024.pdf">Cross-Sectional Uncertainty and the Business Cycle: Evidence from 40 Years of Options Data</a></div>
+                <div class="paper-number">26.</div>
+                <div class="paper-title"><a href="papers/dew-becker-giglio-aej-2023.pdf">Cross-Sectional Uncertainty and the Business Cycle: Evidence from 40 Years of Options Data</a></div>
                 <div class="paper-authors">with Ian Dew-Becker</div>
-                <div class="paper-journal">American Economic Journal: Macroeconomics (2024)</div>
-                <div class="paper-links"><a href="papers/dew-becker-giglio-aej-2024.pdf">PDF</a></div>
+                <div class="paper-journal"><strong>American Economic Journal: Macroeconomics</strong> (2023), 15(2): 65–96</div>
+                <div class="paper-links">
+                    <a href="data/dew-becker-giglio-aej-2023-data.zip">Data</a>
+                </div>
             </div>
 
-            <p style="margin-top: 2rem; font-size: 0.88rem; color: var(--slate); font-style: italic;">
-                Additional publications (1–25) available in the <a href="papers/giglio-cv.pdf" style="color: var(--blue-accent); text-decoration: none;">full CV</a>.
-            </p>
+            <div class="paper">
+                <div class="paper-number">25.</div>
+                <div class="paper-title"><a href="https://rdcu.be/cTg1c" target="_blank">The Effect of Climate Risks on the Interactions between Financial Markets and Energy Companies</a></div>
+                <div class="paper-authors">with Arthur van Benthem, Edmund Crooks, Eugenie Schwob, and Johannes Stroebel</div>
+                <div class="paper-journal"><strong>Nature Energy</strong> (2022), 7: 690–697</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">24.</div>
+                <div class="paper-title"><a href="papers/giglio-kelly-xiu-arfe-2022.pdf">Factor Models, Machine Learning, and Asset Pricing</a></div>
+                <div class="paper-authors">with Bryan Kelly and Dacheng Xiu</div>
+                <div class="paper-journal"><strong>Annual Review of Financial Economics</strong> (2022), 14: 337–68</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">23.</div>
+                <div class="paper-title"><a href="papers/capponi-cheng-du-giglio-haynes-2022.pdf">The Collateral Rule: Evidence from the Credit Default Swap Market</a></div>
+                <div class="paper-authors">with Agostino Capponi, Allen Cheng, Chuan Du, and Richard Haynes</div>
+                <div class="paper-journal"><strong>Journal of Monetary Economics</strong> (2022), 126: 58–86</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">22.</div>
+                <div class="paper-title"><a href="papers/giglio-maggiori-rao-stroebel-weber-2021.pdf">Climate Change and Long-Run Discount Rates: Evidence from Real Estate</a></div>
+                <div class="paper-authors">with Matteo Maggiori, Krishna Rao, Johannes Stroebel, and Andreas Weber</div>
+                <div class="paper-journal"><strong>Review of Financial Studies</strong> (2021), 34(8): 3527–3571</div>
+                <div class="paper-award">RFS Editor's Choice Article; RFS Michael Brennan Best Paper Award Runner Up, 2022</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">21.</div>
+                <div class="paper-title"><a href="papers/giglio-xiu-jpe-2021.pdf">Asset Pricing with Omitted Factors</a></div>
+                <div class="paper-authors">with Dacheng Xiu</div>
+                <div class="paper-journal"><strong>Journal of Political Economy</strong> (2021), 129(7): 1947–1990</div>
+                <div class="paper-award">Lead Article; Best Paper Prize, 2017 European Financial Association Conference</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-xiu-jpe-2021-appendix.pdf">Online Appendix</a>
+                    <a href="https://drive.google.com/file/d/1qmM7O0-HVHtHNZ96xgpP5gsBpoHDuwq6/view?usp=sharing" target="_blank">Code</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">20.</div>
+                <div class="paper-title"><a href="papers/giglio-maggiori-stroebel-utkus-pnas-2021.pdf">The Joint Dynamics of Investor Beliefs and Trading during the COVID-19 Crash</a></div>
+                <div class="paper-authors">with Matteo Maggiori, Johannes Stroebel, and Stephen Utkus</div>
+                <div class="paper-journal"><strong>PNAS</strong> (2021), 118(4)</div>
+                <div class="paper-authors" style="font-style: italic;">Previously circulated as "Inside the Mind of a Stock Market Crash"</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">19.</div>
+                <div class="paper-title"><a href="papers/giglio-maggiori-stroebel-utkus-aer-2021.pdf">Five Facts About Beliefs and Portfolios</a></div>
+                <div class="paper-authors">with Matteo Maggiori, Johannes Stroebel, and Steven Utkus</div>
+                <div class="paper-journal"><strong>American Economic Review</strong> (2021), 111(5): 1481–1522</div>
+                <div class="paper-award">2021 AQR Insight Award (Distinguished Paper); Best Behavioral Finance Paper, Midwest Finance Association Meetings 2020; Yuki Arai Faculty Research Prize for Finance 2019</div>
+                <div class="paper-links">
+                    <a href="https://www.aeaweb.org/content/file?id=14305" target="_blank">Online Appendix</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">18.</div>
+                <div class="paper-title"><a href="papers/giglio-kelly-stroebel-arfe-2021.pdf">Climate Finance</a></div>
+                <div class="paper-authors">with Bryan Kelly and Johannes Stroebel</div>
+                <div class="paper-journal"><strong>Annual Review of Financial Economics</strong> (2021), 13: 15–36</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">17.</div>
+                <div class="paper-title"><a href="papers/dew-becker-giglio-kelly-jfe-2021.pdf">Hedging Macroeconomic and Financial Uncertainty and Volatility</a></div>
+                <div class="paper-authors">with Ian Dew-Becker and Bryan Kelly</div>
+                <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2021), 142: 23–45</div>
+                <div class="paper-links">
+                    <a href="data/dew-becker-giglio-kelly-jfe-2021-data.zip">Data</a>
+                    <a href="papers/dew-becker-giglio-kelly-jfe-2021-appendix.pdf">Online Appendix</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">16.</div>
+                <div class="paper-title"><a href="papers/giglio-liao-xiu-rfs-2021.pdf">Thousands of Alpha Tests</a></div>
+                <div class="paper-authors">with Yuan Liao and Dacheng Xiu</div>
+                <div class="paper-journal"><strong>Review of Financial Studies</strong> (2021), 34(7): 3456–3496</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-liao-xiu-rfs-2021-appendix.pdf">Online Appendix</a>
+                    <a href="https://drive.google.com/file/d/1NlYfH5oDPIPOSYAcIO79aceVMDznUXc7/view?usp=sharing" target="_blank">Code</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">15.</div>
+                <div class="paper-title"><a href="papers/feng-giglio-xiu-jf-2020.pdf">Taming the Factor Zoo: a Test of New Factors</a></div>
+                <div class="paper-authors">with Guanhao Feng and Dacheng Xiu</div>
+                <div class="paper-journal"><strong>Journal of Finance</strong> (2020), 75(3): 1327–1370</div>
+                <div class="paper-award">AQR Insight Award 2018, First Prize</div>
+                <div class="paper-links">
+                    <a href="papers/feng-giglio-xiu-jf-2020-appendix.pdf">Online Appendix</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">14.</div>
+                <div class="paper-title"><a href="papers/berger-dew-becker-giglio-res-2020.pdf">Uncertainty Shocks as Second-Moment News Shocks</a></div>
+                <div class="paper-authors">with David Berger and Ian Dew-Becker</div>
+                <div class="paper-journal"><strong>Review of Economic Studies</strong> (2020), 87(1): 40–76</div>
+                <div class="paper-authors" style="font-style: italic;">Previous title: "Contractionary Volatility or Volatile Contractions?"</div>
+                <div class="paper-links">
+                    <a href="data/berger-dew-becker-giglio-res-2020-data.zip">Data</a>
+                    <a href="papers/berger-dew-becker-giglio-res-2020-appendix.pdf">Online Appendix</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">13.</div>
+                <div class="paper-title"><a href="papers/engle-giglio-kelly-lee-stroebel-rfs-2020.pdf">Hedging Climate Change News</a></div>
+                <div class="paper-authors">with Robert Engle, Bryan Kelly, Heebum Lee, and Johannes Stroebel</div>
+                <div class="paper-journal"><strong>Review of Financial Studies</strong> (2020), 33(3): 1184–1216</div>
+                <div class="paper-links">
+                    <a href="data/engle-giglio-kelly-lee-stroebel-rfs-2020-data.zip">Data</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">12.</div>
+                <div class="paper-title"><a href="papers/campbell-giglio-polk-turley-jfe-2018.pdf">An Intertemporal CAPM with Stochastic Volatility</a></div>
+                <div class="paper-authors">with John Campbell, Christopher Polk, and Bob Turley</div>
+                <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2018), 128(2): 207–233</div>
+                <div class="paper-award">Lead Article; Fama-DFA Prize for the Best Paper Published in the Journal of Financial Economics (Asset Pricing), 2018</div>
+                <div class="paper-links">
+                    <a href="papers/campbell-giglio-polk-turley-jfe-2018-appendix.pdf">Online Appendix</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">11.</div>
+                <div class="paper-title"><a href="papers/giglio-kelly-qje-2018.pdf">Excess Volatility: Beyond Discount Rates</a></div>
+                <div class="paper-authors">with Bryan Kelly</div>
+                <div class="paper-journal"><strong>Quarterly Journal of Economics</strong> (2018), 133(1): 71–127</div>
+                <div class="paper-award">Finalist, AQR Insight Award, 2016; Napa Conference Best Paper Award, 2016</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-kelly-qje-2018-appendix.pdf">Online Appendix</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">10.</div>
+                <div class="paper-title"><a href="papers/dew-becker-giglio-le-rodriguez-jfe-2017.pdf">The Price of Variance Risk</a></div>
+                <div class="paper-authors">with Ian Dew-Becker, Anh Le, and Marius Rodriguez</div>
+                <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2017), 123(2): 225–250</div>
+                <div class="paper-award">Lead Article</div>
+                <div class="paper-links">
+                    <a href="data/dew-becker-giglio-le-rodriguez-jfe-2017-data.zip">Data</a>
+                    <a href="papers/dew-becker-giglio-le-rodriguez-jfe-2017-appendix.pdf">Online Appendix</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">9.</div>
+                <div class="paper-title"><a href="papers/dew-becker-giglio-rfs-2016.pdf">Asset Pricing in the Frequency Domain: Theory and Empirics</a></div>
+                <div class="paper-authors">with Ian Dew-Becker</div>
+                <div class="paper-journal"><strong>Review of Financial Studies</strong> (2016), 29(8): 2029–2068</div>
+                <div class="paper-links">
+                    <a href="papers/dew-becker-giglio-rfs-2016-appendix.pdf">Online Appendix</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">8.</div>
+                <div class="paper-title"><a href="https://drive.google.com/open?id=0B-rnPpVUb1kib1FKenA4WTNDenM" target="_blank">No-Bubble Condition: Model-Free Tests in Housing Markets</a></div>
+                <div class="paper-authors">with Matteo Maggiori and Johannes Stroebel</div>
+                <div class="paper-journal"><strong>Econometrica</strong> (2016), 84(3): 1047–1091</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-maggiori-stroebel-ecma-2016-appendix.pdf">Online Appendix</a>
+                    <a href="papers/giglio-maggiori-stroebel-ecma-2016-reply.pdf">Reply</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">7.</div>
+                <div class="paper-title"><a href="papers/giglio-kelly-pruitt-jfe-2016.pdf">Systemic Risk and the Macroeconomy: An Empirical Evaluation</a></div>
+                <div class="paper-authors">with Bryan Kelly and Seth Pruitt</div>
+                <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2016), 119(3): 457–471</div>
+                <div class="paper-award">Lead Article; Fama-DFA Prize for the Best Paper Published in the Journal of Financial Economics (Asset Pricing), 2016; Q-Group Roger F. Murray Prize (3rd prize), 2015</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-kelly-pruitt-jfe-2016-appendix.pdf">Online Appendix</a>
+                    <a href="data/giglio-kelly-pruitt-jfe-2016-data.zip">Data</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">6.</div>
+                <div class="paper-title"><a href="papers/giglio-maggiori-rpe-2016.pdf">A Review of Long-Run Discounting: Evidence from Housing Markets</a></div>
+                <div class="paper-authors">with Matteo Maggiori</div>
+                <div class="paper-journal"><strong>Rivista di Politica Economica</strong> (2016), 4, 7–36 (not refereed)</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">5.</div>
+                <div class="paper-title"><a href="http://qje.oxfordjournals.org/content/130/1/1.full.pdf" target="_blank">Very Long-Run Discount Rates</a></div>
+                <div class="paper-authors">with Matteo Maggiori and Johannes Stroebel</div>
+                <div class="paper-journal"><strong>Quarterly Journal of Economics</strong> (2015), 130(1): 1–53</div>
+                <div class="paper-award">QJE Lead Article; QJE Editor's Choice Article; Jacob Gold &amp; Associates Best Paper Prize, ASU Sonoran Winter Finance Conference, 2014; NYU Glucksman Institute Faculty Research Prize for the Best Paper in Finance, 2015</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-maggiori-stroebel-qje-2015-appendix.pdf">Online Appendix</a>
+                    <a href="http://www.nber.org/papers/w20133" target="_blank">NBER WP Version</a>
+                    <a href="data/giglio-maggiori-stroebel-qje-2015-data.zip">Data</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">4.</div>
+                <div class="paper-title"><a href="papers/giglio-shue-rfs-2014.pdf">No News is News: Do Markets Underreact to Nothing?</a></div>
+                <div class="paper-authors">with Kelly Shue</div>
+                <div class="paper-journal"><strong>Review of Financial Studies</strong> (2014), 27(12): 3389–3440</div>
+                <div class="paper-award">Lead Article; RFS Editor's Choice Article; Winner, UBS Global Asset Management Award for Research in Investments, FRA Meeting 2012</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">3.</div>
+                <div class="paper-title"><a href="papers/campbell-giglio-polk-raps-2013.pdf">Hard Times</a></div>
+                <div class="paper-authors">with John Campbell and Christopher Polk</div>
+                <div class="paper-journal"><strong>Review of Asset Pricing Studies</strong> (2013), 3(1): 95–132</div>
+                <div class="paper-links">
+                    <a href="papers/campbell-giglio-polk-raps-2013-appendix.pdf">Online Appendix</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">2.</div>
+                <div class="paper-title"><a href="papers/giglio-severo-jme-2012.pdf">Intangible Capital, Relative Asset Shortages, and Bubbles</a></div>
+                <div class="paper-authors">with Tiago Severo</div>
+                <div class="paper-journal"><strong>Journal of Monetary Economics</strong> (2012), 59: 303–317</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-severo-jme-2012-appendix.pdf">Online Appendix</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">1.</div>
+                <div class="paper-title"><a href="papers/campbell-giglio-pathak-aer-2011.pdf">Forced Sales and House Prices</a></div>
+                <div class="paper-authors">with John Campbell and Parag Pathak</div>
+                <div class="paper-journal"><strong>American Economic Review</strong> (2011), 101(5): 2108–2131</div>
+                <div class="paper-links">
+                    <a href="papers/campbell-giglio-pathak-aer-2011-appendix.pdf">Online Appendix</a>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <!-- DATA & CODE -->
+
     <div class="section" id="data">
         <div class="content-wrapper">
             <h1 class="section-title">Data &amp; Code</h1>
@@ -918,7 +1211,7 @@
                 <div class="data-card-title">Test Assets and Weak Factors</div>
                 <div class="data-card-desc">Simulation code for SPCA and other risk premium estimation methodologies.</div>
                 <div class="data-card-links">
-                    <a href="code/test-assets-weak-factors.zip">Download Code</a>
+                    <a href="https://drive.google.com/file/d/1ps61ntDVlFTCVys-s8vc5I0oJNfIJkf9/view?usp=sharing" target="_blank">Download Code</a>
                 </div>
             </div>
 
@@ -1029,7 +1322,7 @@
     <!-- CONTACT & CV -->
     <div class="section" id="contact">
         <div class="content-wrapper">
-            <h1 class="section-title">Contact &amp; CV</h1>
+            <h1 class="section-title">Contact</h1>
 
             <div class="contact-grid">
                 <div class="contact-block">
