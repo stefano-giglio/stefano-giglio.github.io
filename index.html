@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stefano Giglio | Yale SOM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1a2744;
+            --navy-deep: #0f1a2e;
+            --navy-light: #2a3d5e;
+            --blue-accent: #4a7fb5;
+            --blue-soft: #6b9fd4;
+            --blue-pale: #e8f0f8;
+            --blue-wash: #f4f8fc;
+            --slate: #64748b;
+            --slate-light: #94a3b8;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-light: #94a3b8;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --border-light: #f1f5f9;
+            --sidebar-width: 280px;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--navy-deep);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            padding: 2.5rem 2rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .sidebar-name {
+            font-family: var(--font-display);
+            font-size: 1.65rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.01em;
+            line-height: 1.2;
+        }
+
+        .sidebar-title {
+            font-size: 0.78rem;
+            color: var(--slate-light);
+            margin-top: 0.6rem;
+            line-height: 1.5;
+            font-weight: 300;
+            letter-spacing: 0.02em;
+        }
+
+        .sidebar-nav {
+            padding: 1.5rem 0;
+            flex: 1;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.55rem 2rem;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            transition: all 0.25s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar-nav a:hover {
+            color: rgba(255,255,255,0.95);
+            background: rgba(255,255,255,0.04);
+        }
+
+        .sidebar-nav a.active {
+            color: var(--white);
+            border-left-color: var(--blue-accent);
+            background: rgba(74,127,181,0.1);
+            font-weight: 500;
+        }
+
+        .sidebar-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .sidebar-footer a {
+            color: var(--slate-light);
+            text-decoration: none;
+            font-size: 0.78rem;
+            transition: color 0.2s;
+        }
+
+        .sidebar-footer a:hover {
+            color: var(--white);
+        }
+
+        .sidebar-contact {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.4);
+            line-height: 1.7;
+        }
+
+        .sidebar-contact a {
+            color: var(--blue-soft);
+            text-decoration: none;
+        }
+
+        .sidebar-contact a:hover {
+            color: var(--white);
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .mobile-header {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: var(--navy-deep);
+            z-index: 200;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.25rem;
+        }
+
+        .mobile-name {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--white);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 150;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .main {
+            margin-left: var(--sidebar-width);
+            min-height: 100vh;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-wrapper {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 3.5rem 3rem 5rem;
+        }
+
+        /* ===== HOME / ABOUT ===== */
+        .hero {
+            display: flex;
+            gap: 2.5rem;
+            align-items: flex-start;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-photo {
+            flex-shrink: 0;
+        }
+
+        .hero-photo img {
+            width: 180px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 4px;
+            filter: grayscale(10%);
+            box-shadow: 0 4px 20px rgba(26,39,68,0.12);
+        }
+
+        .hero-info h1 {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.15;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-role {
+            font-size: 1rem;
+            color: var(--blue-accent);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-affiliations {
+            font-size: 0.88rem;
+            color: var(--slate);
+            line-height: 1.8;
+        }
+
+        .hero-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.4rem 1rem;
+            background: var(--blue-pale);
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+        }
+
+        .hero-links a:hover {
+            background: var(--blue-accent);
+            color: var(--white);
+        }
+
+        .about-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            border-left: 3px solid var(--blue-accent);
+            padding-left: 1.25rem;
+            margin: 2rem 0;
+        }
+
+        .about-text a {
+            color: var(--blue-accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .about-text a:hover {
+            border-bottom-color: var(--blue-accent);
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.01em;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            color: var(--slate);
+            margin-bottom: 2rem;
+        }
+
+        .subsection-title {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 2.5rem 0 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .subsection-title:first-of-type {
+            margin-top: 0.5rem;
+        }
+
+        /* ===== PAPER LIST ===== */
+        .paper {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.75rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .paper:last-child {
+            border-bottom: none;
+        }
+
+        .paper-number {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--blue-accent);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.25rem;
+        }
+
+        .paper-title {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.35;
+            margin-bottom: 0.3rem;
+        }
+
+        .paper-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .paper-title a:hover {
+            color: var(--blue-accent);
+        }
+
+        .paper-authors {
+            font-size: 0.88rem;
+            color: var(--slate);
+            margin-bottom: 0.2rem;
+        }
+
+        .paper-journal {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .paper-award {
+            display: inline-block;
+            margin-top: 0.35rem;
+            font-size: 0.76rem;
+            color: var(--blue-accent);
+            font-weight: 500;
+            padding: 0.15rem 0.5rem;
+            background: var(--blue-pale);
+            border-radius: 2px;
+        }
+
+        .paper-links {
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .paper-links a {
+            font-size: 0.78rem;
+            color: var(--blue-accent);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.2rem 0.55rem;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+
+        .paper-links a:hover {
+            background: var(--blue-pale);
+            border-color: var(--blue-accent);
+        }
+
+        .paper-abstract {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .paper-abstract.open {
+            display: block;
+        }
+
+        .abstract-toggle {
+            font-size: 0.78rem;
+            color: var(--blue-accent);
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            padding: 0.2rem 0.55rem;
+            cursor: pointer;
+            font-weight: 500;
+            font-family: var(--font-body);
+            transition: all 0.2s;
+        }
+
+        .abstract-toggle:hover {
+            background: var(--blue-pale);
+            border-color: var(--blue-accent);
+        }
+
+        /* ===== TEACHING ===== */
+        .course-list {
+            list-style: none;
+        }
+
+        .course-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .course-item:last-child {
+            border-bottom: none;
+        }
+
+        .course-name {
+            font-family: var(--font-display);
+            font-size: 1.08rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .course-code {
+            font-size: 0.8rem;
+            color: var(--blue-accent);
+            font-weight: 500;
+        }
+
+        .course-level {
+            font-size: 0.82rem;
+            color: var(--slate);
+            margin-top: 0.15rem;
+        }
+
+        /* ===== DATA & CODE ===== */
+        .data-card {
+            padding: 1.25rem 1.5rem;
+            background: var(--blue-wash);
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--blue-accent);
+        }
+
+        .data-card-title {
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.3rem;
+        }
+
+        .data-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .data-card-links {
+            margin-top: 0.6rem;
+        }
+
+        .data-card-links a {
+            font-size: 0.8rem;
+            color: var(--blue-accent);
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 1rem;
+        }
+
+        .data-card-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== DISCUSSIONS ===== */
+        .discussion-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .discussion-item:last-child {
+            border-bottom: none;
+        }
+
+        .discussion-title {
+            font-size: 0.92rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .discussion-title a {
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .discussion-title a:hover {
+            color: var(--blue-accent);
+        }
+
+        .discussion-meta {
+            font-size: 0.78rem;
+            color: var(--slate);
+            margin-top: 0.1rem;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-block h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-block p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .contact-block a {
+            color: var(--blue-accent);
+            text-decoration: none;
+        }
+
+        .contact-block a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .mobile-header {
+                display: flex;
+            }
+
+            .main {
+                margin-left: 0;
+                padding-top: 60px;
+            }
+
+            .content-wrapper {
+                padding: 2rem 1.5rem 4rem;
+            }
+
+            .hero {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .hero-photo img {
+                width: 140px;
+                height: 170px;
+            }
+
+            .hero-info h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .overlay.open {
+                display: block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .content-wrapper {
+                padding: 1.5rem 1.15rem 3rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Mobile Header -->
+<div class="mobile-header">
+    <span class="mobile-name">Stefano Giglio</span>
+    <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</div>
+<div class="overlay" onclick="toggleMobile()"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <div class="sidebar-name">Stefano Giglio</div>
+        <div class="sidebar-title">
+            Frederic D. Wolfe Professor<br>
+            of Finance &amp; Management<br>
+            Yale School of Management
+        </div>
+    </div>
+    <div class="sidebar-nav">
+        <a href="#home" class="active" onclick="showSection('home', this)">Home</a>
+        <a href="#research" onclick="showSection('research', this)">Research</a>
+        <a href="#data" onclick="showSection('data', this)">Data &amp; Code</a>
+        <a href="#discussions" onclick="showSection('discussions', this)">Discussions</a>
+        <a href="#teaching" onclick="showSection('teaching', this)">Teaching</a>
+        <a href="#contact" onclick="showSection('contact', this)">Contact &amp; CV</a>
+    </div>
+    <div class="sidebar-footer">
+        <div class="sidebar-contact">
+            <a href="mailto:stefano.giglio@yale.edu">stefano.giglio@yale.edu</a><br>
+            Tel. 203-432-3373<br><br>
+            Yale School of Management<br>
+            165 Whitney Avenue<br>
+            New Haven, CT 06520
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="main">
+
+    <!-- HOME -->
+    <div class="section active" id="home">
+        <div class="content-wrapper">
+            <div class="hero">
+                <div class="hero-photo">
+                    <!-- Replace with your photo: save as images/headshot.jpg -->
+                    <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkduD0DWV2eZ1sodzsT_YGMFeTYjRLNZHMyOOA3KC4zm6hX9omO3dz7DcXPSAGIYDIwoHMtefLOJCniUj7dTBkKxbhz08BRQGN2yV4pa0eKpBor_vyyNEOYFKm7z24vyJN8jnWqC5mUQGCkEna-I7iBXjM7wLVOmSmN3abYxwZLdsgKYrE1S8f0-83pnU7dAE0tqdKC-eglWEHusCTMOEcBYGJ6L_AY0=w1280" alt="Stefano Giglio">
+                </div>
+                <div class="hero-info">
+                    <h1>Stefano Giglio</h1>
+                    <div class="hero-role">Frederic D. Wolfe Professor of Finance &amp; Management</div>
+                    <div class="hero-affiliations">
+                        Yale School of Management<br>
+                        NBER Research Associate<br>
+                        CEPR Research Affiliate
+                    </div>
+                    <div class="hero-links">
+                        <a href="papers/giglio-cv.pdf">Download CV</a>
+                        <a href="https://som.yale.edu/stefano-giglio" target="_blank">Official Page</a>
+                        <a href="#contact" onclick="showSection('contact', document.querySelector('[href=\'#contact\']'))">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-text">
+                My research spans <strong>asset pricing</strong>, <strong>climate finance</strong>, <strong>macro-finance</strong>, and <strong>expectations formation</strong>. I am particularly interested in long-run discount rates, risk premia, biodiversity and climate risk, and the role of beliefs in financial markets. At Yale SOM, I teach courses on speculation and hedging, investment management, ESG investing, and asset pricing theory.
+            </div>
+
+            <h2 class="subsection-title">Research Interests</h2>
+            <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.8;">
+                Asset pricing, climate finance and ESG investing, biodiversity and natural capital, long-run discount rates, macro-finance, expectations and belief formation, financial risk and volatility, econometric methods for factor models.
+            </p>
+        </div>
+    </div>
+
+    <!-- RESEARCH -->
+    <div class="section" id="research">
+        <div class="content-wrapper">
+            <h1 class="section-title">Research</h1>
+            <p class="section-subtitle">Papers are linked as PDFs. For working papers, the latest version is available below.</p>
+
+            <h2 class="subsection-title">Working Papers</h2>
+
+            <div class="paper">
+                <div class="paper-title"><a href="papers/giglio-dew-becker-molavi-2024.pdf">The Dependence of Belief Dynamics on Beliefs: Implications for Stock Returns</a></div>
+                <div class="paper-authors">with Ian Dew-Becker and Pooya Molavi, October 2024</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-dew-becker-molavi-2024.pdf">PDF</a>
+                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+                </div>
+                <div class="paper-abstract">This paper studies the implications of a simple theorem, which states that for arbitrary underlying dynamics, the cumulants of Bayesian beliefs have a recursive structure: the sensitivity of the mean to news is proportional to the variance; the sensitivity of the nth cumulant to news is proportional to the (n+1)th. The specific application is the US aggregate stock market. The model qualitatively and quantitatively generates a range of observed features of the data: negative skewness and positive excess kurtosis in stock returns, positive skewness and kurtosis and long memory in volatility, a negative relationship between returns and volatility changes, and predictable variation in the strength of that relationship.</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-title"><a href="papers/acharya-giglio-pastore-stroebel-tan-yong-2025.pdf">Climate Transition Risks and the Energy Sector</a></div>
+                <div class="paper-authors">with Viral Acharya, Stefano Pastore, Johannes Stroebel, Zhenhao Tan, and Tiffany Yong, January 2025</div>
+                <div class="paper-links">
+                    <a href="papers/acharya-giglio-pastore-stroebel-tan-yong-2025.pdf">PDF</a>
+                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+                </div>
+                <div class="paper-abstract">We build a general equilibrium model to study how climate transition risks affect energy prices and the valuations of different firms in the energy sector. We consider two types of fossil fuel firms: incumbents that have developed oil reserves they can extract today or tomorrow, and new entrants that must invest in exploration and drilling today. We analyze three sources of climate transition risk and show that the different transition risks have distinct effects on firms' decisions, on their valuations, and on equilibrium energy prices.</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-title"><a href="papers/giglio-kuchler-stroebel-wang-2025.pdf">The Economics of Biodiversity Loss</a></div>
+                <div class="paper-authors">with Theresa Kuchler, Johannes Stroebel, and Olivier Wang, September 2025</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-kuchler-stroebel-wang-2025.pdf">PDF</a>
+                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+                </div>
+                <div class="paper-abstract">We explore the economic effects of biodiversity loss by developing an ecologically-founded model of how different species interact to deliver the ecosystem services that contribute to economic production. We derive an expression for the fragility of ecosystems and economic output to further biodiversity loss, and show that it increases with both mean species losses as well as the imbalance of species losses across ecosystem functions.</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-title"><a href="papers/giglio-xiu-zhang-2023.pdf">Prediction When Factors are Weak</a></div>
+                <div class="paper-authors">with Dacheng Xiu and Dake Zhang, March 2023</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-xiu-zhang-2023.pdf">PDF</a>
+                    <a href="papers/giglio-xiu-zhang-2023-supplement.pdf">Supplement</a>
+                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+                </div>
+                <div class="paper-abstract">In macroeconomic forecasting, principal component analysis (PCA) has been the most prevalent approach to the recovery of factors. To incorporate information from weaker factors, we propose a new prediction procedure based on supervised PCA, which iterates over selection, PCA, and projection. Our empirical analysis highlights the role of weak factors in predicting inflation, industrial production growth, and changes in unemployment.</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-title"><a href="papers/campbell-giglio-polk-2023.pdf">What Drives Booms and Busts in Value?</a></div>
+                <div class="paper-authors">with John Campbell and Christopher Polk, November 2023</div>
+                <div class="paper-links">
+                    <a href="papers/campbell-giglio-polk-2023.pdf">PDF</a>
+                    <a href="papers/campbell-giglio-polk-2023-appendix.pdf">Online Appendix</a>
+                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+                </div>
+                <div class="paper-abstract">Value investing delivers volatile returns, with large drawdowns during both market booms and busts. This paper interprets these returns through an intertemporal CAPM, which predicts that aggregate cash flow, discount rate, and volatility news all move value returns. We document that indeed these shocks explain a large fraction of quarterly value returns over the last 60 years.</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-title"><a href="papers/dew-becker-giglio-2024.pdf">The Decline of the Variance Risk Premium: Evidence from Traded and Synthetic Options</a></div>
+                <div class="paper-authors">with Ian Dew-Becker, July 2024</div>
+                <div class="paper-links">
+                    <a href="papers/dew-becker-giglio-2024.pdf">PDF</a>
+                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+                </div>
+                <div class="paper-abstract">The historical returns on equity index options are well known to be strikingly negative. This paper shows that over the last 15 years, the returns of traded options have become significantly less negative, to the point that their CAPM alpha is now statistically indistinguishable from zero. We also build dynamically replicated, or synthetic, options, and show that over the period 1926–2022 they always had zero alpha.</div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-title"><a href="papers/giglio-2014-cds.pdf">Credit Default Swap Spreads and Systemic Financial Risk</a></div>
+                <div class="paper-authors">April 2014</div>
+                <div class="paper-award">Runner-up, Ieke van den Burg Prize for Research on Systemic Risk, 2015</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-2014-cds.pdf">PDF</a>
+                    <a href="papers/giglio-2014-cds-appendix.pdf">Online Appendix</a>
+                    <button class="abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+                </div>
+                <div class="paper-abstract">This paper measures the joint default risk of financial institutions by exploiting information about counterparty risk in credit default swaps (CDS). A CDS contract written by a bank to insure against the default of another bank is exposed to the risk that both banks default. From CDS spreads we can then learn about the joint default risk of pairs of banks.</div>
+            </div>
+
+            <h2 class="subsection-title">Publications</h2>
+
+            <div class="paper">
+                <div class="paper-number">35</div>
+                <div class="paper-title"><a href="papers/alekseev-giglio-maingi-selgrad-stroebel-2024.pdf">A Quantity-Based Approach to Constructing Climate Risk Hedge Portfolios</a></div>
+                <div class="paper-authors">with Georgij Alekseev, Quinn Maingi, Julia Selgrad, and Johannes Stroebel</div>
+                <div class="paper-journal">Journal of Finance, forthcoming</div>
+                <div class="paper-award">Best Paper in Asset Pricing, 2022 SFS Cavalcade</div>
+                <div class="paper-award">Two Sigma Award, Best Paper on Investment Management, 2022 WFA</div>
+                <div class="paper-links">
+                    <a href="papers/alekseev-giglio-maingi-selgrad-stroebel-2024.pdf">PDF</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">34</div>
+                <div class="paper-title"><a href="papers/giglio-kuchler-stroebel-wang-jfip.pdf">Nature and Biodiversity Loss: A Research Agenda for Financial Economics</a></div>
+                <div class="paper-authors">with Theresa Kuchler, Johannes Stroebel, and Olivier Wang</div>
+                <div class="paper-journal">Journal of Finance: Insights and Perspectives, forthcoming</div>
+                <div class="paper-links"><a href="papers/giglio-kuchler-stroebel-wang-jfip.pdf">PDF</a></div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">33</div>
+                <div class="paper-title"><a href="papers/giglio-maggiori-rillo-stroebel-utkus-xu.pdf">Investor Beliefs and Expectation Formation</a></div>
+                <div class="paper-authors">with Matteo Maggiori, Joachim Rillo, Johannes Stroebel, Steve Utkus, and Xiao Xu</div>
+                <div class="paper-journal">Annual Review of Financial Economics, forthcoming</div>
+                <div class="paper-links"><a href="papers/giglio-maggiori-rillo-stroebel-utkus-xu.pdf">PDF</a></div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">32</div>
+                <div class="paper-title"><a href="papers/giglio-kuchler-stroebel-zeng-2023.pdf">Biodiversity Risk</a></div>
+                <div class="paper-authors">with Theresa Kuchler, Johannes Stroebel, and Xuran Zeng</div>
+                <div class="paper-journal">Review of Finance (Special Issue for Biodiversity and Natural Resource Finance), forthcoming</div>
+                <div class="paper-award">Northwestern University Moskowitz Prize for sustainable finance research, 2023</div>
+                <div class="paper-award">Berkeley Haas Sustainable Business Research Prize, 2023</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-kuchler-stroebel-zeng-2023.pdf">PDF</a>
+                    <a href="http://www.biodiversityrisk.org/" target="_blank">Data</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">31</div>
+                <div class="paper-title"><a href="papers/giglio-kuchler-stroebel-wang-aer-pp-2025.pdf">Nature Loss and Climate Change: the Twin-Crises Multiplier</a></div>
+                <div class="paper-authors">with Theresa Kuchler, Johannes Stroebel, and Olivier Wang</div>
+                <div class="paper-journal">AEA Papers and Proceedings (2025), 115: 409–414</div>
+                <div class="paper-links"><a href="papers/giglio-kuchler-stroebel-wang-aer-pp-2025.pdf">PDF</a></div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">30</div>
+                <div class="paper-title"><a href="papers/giglio-maggiori-stroebel-tan-utkus-xu-2025.pdf">Four Facts about ESG Beliefs and Investor Portfolios</a></div>
+                <div class="paper-authors">with Matteo Maggiori, Johannes Stroebel, Zhenhao Tan, Stephen Utkus, and Xiao Xu</div>
+                <div class="paper-journal">Journal of Financial Economics (2025), 164</div>
+                <div class="paper-award">Northwestern University Moskowitz Prize (honorable mention)</div>
+                <div class="paper-links"><a href="papers/giglio-maggiori-stroebel-tan-utkus-xu-2025.pdf">PDF</a></div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">29</div>
+                <div class="paper-title"><a href="papers/giglio-xiu-zhang-jf-2025.pdf">Test Assets and Weak Factors</a></div>
+                <div class="paper-authors">with Dacheng Xiu and Dake Zhang</div>
+                <div class="paper-journal">Journal of Finance (2025), 80(1), 259–319</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-xiu-zhang-jf-2025.pdf">PDF</a>
+                    <a href="code/test-assets-weak-factors.zip">Code</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">28</div>
+                <div class="paper-title"><a href="papers/dew-becker-giglio-arfe-2024.pdf">Recent Developments in Financial Risk and the Real Economy</a></div>
+                <div class="paper-authors">with Ian Dew-Becker</div>
+                <div class="paper-journal">Annual Review of Financial Economics (2024), 16(4): 1–22</div>
+                <div class="paper-links"><a href="papers/dew-becker-giglio-arfe-2024.pdf">PDF</a></div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">27</div>
+                <div class="paper-title"><a href="papers/giglio-kelly-kozak-jf-2024.pdf">Equity Term Structures without Dividend Strips Data</a></div>
+                <div class="paper-authors">with Bryan Kelly and Serhiy Kozak</div>
+                <div class="paper-journal">Journal of Finance (2024), 79(6)</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-kelly-kozak-jf-2024.pdf">PDF</a>
+                    <a href="#data" onclick="showSection('data', document.querySelector('[href=\'#data\']'))">Data</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-number">26</div>
+                <div class="paper-title"><a href="papers/dew-becker-giglio-aej-2024.pdf">Cross-Sectional Uncertainty and the Business Cycle: Evidence from 40 Years of Options Data</a></div>
+                <div class="paper-authors">with Ian Dew-Becker</div>
+                <div class="paper-journal">American Economic Journal: Macroeconomics (2024)</div>
+                <div class="paper-links"><a href="papers/dew-becker-giglio-aej-2024.pdf">PDF</a></div>
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 0.88rem; color: var(--slate); font-style: italic;">
+                Additional publications (1–25) available in the <a href="papers/giglio-cv.pdf" style="color: var(--blue-accent); text-decoration: none;">full CV</a>.
+            </p>
+        </div>
+    </div>
+
+    <!-- DATA & CODE -->
+    <div class="section" id="data">
+        <div class="content-wrapper">
+            <h1 class="section-title">Data &amp; Code</h1>
+            <p class="section-subtitle">Replication packages, datasets, and code related to my published research.</p>
+
+            <div class="data-card">
+                <div class="data-card-title">Test Assets and Weak Factors</div>
+                <div class="data-card-desc">Simulation code for SPCA and other risk premium estimation methodologies.</div>
+                <div class="data-card-links">
+                    <a href="code/test-assets-weak-factors.zip">Download Code</a>
+                </div>
+            </div>
+
+            <div class="data-card">
+                <div class="data-card-title">Equity Term Structures without Dividend Strips Data</div>
+                <div class="data-card-desc">Dataset constructed using the model in Giglio, Kelly, Kozak (2024) "Equity Term Structures without Dividend Strips Data." The data contains estimated equity term structure yields at various maturities.</div>
+                <div class="data-card-links">
+                    <a href="data/equity-term-structures.zip">Download Data</a>
+                    <a href="papers/giglio-kelly-kozak-jf-2024.pdf">Paper</a>
+                </div>
+            </div>
+
+            <div class="data-card">
+                <div class="data-card-title">Biodiversity Risk Data</div>
+                <div class="data-card-desc">Biodiversity risk measures constructed for the paper "Biodiversity Risk" with Kuchler, Stroebel, and Zeng.</div>
+                <div class="data-card-links">
+                    <a href="http://www.biodiversityrisk.org/" target="_blank">biodiversityrisk.org</a>
+                    <a href="papers/giglio-kuchler-stroebel-zeng-2023.pdf">Paper</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DISCUSSIONS -->
+    <div class="section" id="discussions">
+        <div class="content-wrapper">
+            <h1 class="section-title">Discussions</h1>
+            <p class="section-subtitle">Conference discussions and invited commentaries.</p>
+
+            <h2 class="subsection-title">Recent Discussions</h2>
+
+            <div class="discussion-item">
+                <div class="discussion-title"><a href="papers/discussions/bastianello-decaire-gunzel-2025.pdf">Mental Models and Financial Forecasts</a></div>
+                <div class="discussion-meta">by Francesca Bastianello, Paul Decaire, and Marius Gunzel — NBER Asset Pricing, Spring 2025</div>
+            </div>
+
+            <div class="discussion-item">
+                <div class="discussion-title"><a href="papers/discussions/cui-delao-myers-2024.pdf">The Subjective Belief Factor</a></div>
+                <div class="discussion-meta">by Tingyue Cui, Ricardo De la O, and Sean Myers — Five Star Conference, Fall 2024</div>
+            </div>
+
+            <div class="discussion-item">
+                <div class="discussion-title"><a href="papers/discussions/climate-risk-insurance-2024.pdf">Pricing of Climate Risk Insurance: Regulation and Cross-Subsidies</a></div>
+                <div class="discussion-meta">Conference discussion, 2024</div>
+            </div>
+
+            <p style="margin-top: 2rem; font-size: 0.88rem; color: var(--slate); font-style: italic;">
+                Additional discussion slides available upon request.
+            </p>
+        </div>
+    </div>
+
+    <!-- TEACHING -->
+    <div class="section" id="teaching">
+        <div class="content-wrapper">
+            <h1 class="section-title">Teaching</h1>
+            <p class="section-subtitle">Courses at Yale School of Management</p>
+
+            <h2 class="subsection-title">Current Courses</h2>
+
+            <ul class="course-list">
+                <li class="course-item">
+                    <div class="course-name">Speculation and Hedging in Financial Markets</div>
+                    <div class="course-code">MGT 542 / MGT 935</div>
+                    <div class="course-level">MBA</div>
+                </li>
+                <li class="course-item">
+                    <div class="course-name">Investment Management</div>
+                    <div class="course-code">MGT 544</div>
+                    <div class="course-level">EMBA</div>
+                </li>
+                <li class="course-item">
+                    <div class="course-name">ESG and Sustainable Investing</div>
+                    <div class="course-code">MGT 929</div>
+                    <div class="course-level">MBA, EMBA</div>
+                </li>
+                <li class="course-item">
+                    <div class="course-name">Asset Pricing Theory</div>
+                    <div class="course-code">MGT 923</div>
+                    <div class="course-level">Master in Asset Management</div>
+                </li>
+                <li class="course-item">
+                    <div class="course-name">Financial Instruments for Speculation and Hedging</div>
+                    <div class="course-level">Master in Asset Management</div>
+                </li>
+            </ul>
+
+            <h2 class="subsection-title">PhD Courses</h2>
+
+            <ul class="course-list">
+                <li class="course-item">
+                    <div class="course-name">Financial Economics of Climate Change</div>
+                    <div class="course-level">PhD Seminar</div>
+                </li>
+                <li class="course-item">
+                    <div class="course-name">Financial Economics I</div>
+                    <div class="course-level">PhD Core Course</div>
+                </li>
+            </ul>
+
+            <h2 class="subsection-title">Other Teaching</h2>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
+                Keynote PhD Lecture on Long-Run Discounting at the 2017 EFMA Conference.
+            </p>
+        </div>
+    </div>
+
+    <!-- CONTACT & CV -->
+    <div class="section" id="contact">
+        <div class="content-wrapper">
+            <h1 class="section-title">Contact &amp; CV</h1>
+
+            <div class="contact-grid">
+                <div class="contact-block">
+                    <h3>Office</h3>
+                    <p>
+                        Yale School of Management<br>
+                        165 Whitney Avenue<br>
+                        New Haven, CT 06520
+                    </p>
+                </div>
+                <div class="contact-block">
+                    <h3>Contact</h3>
+                    <p>
+                        <a href="mailto:stefano.giglio@yale.edu">stefano.giglio@yale.edu</a><br>
+                        Tel. 203-432-3373
+                    </p>
+                </div>
+                <div class="contact-block">
+                    <h3>Curriculum Vitae</h3>
+                    <p>
+                        <a href="papers/giglio-cv.pdf">Download CV (PDF)</a>
+                    </p>
+                </div>
+                <div class="contact-block">
+                    <h3>Affiliations</h3>
+                    <p>
+                        NBER Research Associate<br>
+                        CEPR Research Affiliate<br>
+                        <a href="https://som.yale.edu/stefano-giglio" target="_blank">Yale SOM Official Page</a>
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="subsection-title">Outside Activities</h2>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
+                I regularly serve as a discussant, referee, and advisor for conferences and academic journals. Details on outside activities are available in my CV.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function showSection(id, link) {
+        // Hide all sections
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        // Show target
+        document.getElementById(id).classList.add('active');
+        // Update nav
+        document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+        if (link) link.classList.add('active');
+        // Close mobile menu if open
+        document.getElementById('sidebar').classList.remove('open');
+        document.querySelector('.overlay').classList.remove('open');
+        // Scroll to top
+        window.scrollTo(0, 0);
+    }
+
+    function toggleMobile() {
+        document.getElementById('sidebar').classList.toggle('open');
+        document.querySelector('.overlay').classList.toggle('open');
+    }
+
+    function toggleAbstract(btn) {
+        const abstract = btn.closest('.paper').querySelector('.paper-abstract');
+        abstract.classList.toggle('open');
+        btn.textContent = abstract.classList.contains('open') ? 'Hide Abstract' : 'Abstract';
+    }
+
+    // Handle hash navigation
+    window.addEventListener('hashchange', () => {
+        const id = location.hash.slice(1);
+        const link = document.querySelector(`.sidebar-nav a[href="#${id}"]`);
+        if (link) showSection(id, link);
+    });
+
+    // Load correct section on page load
+    if (location.hash) {
+        const id = location.hash.slice(1);
+        const link = document.querySelector(`.sidebar-nav a[href="#${id}"]`);
+        if (link) showSection(id, link);
+    }
+</script>
+
+</body>
+</html>
