@@ -43,7 +43,7 @@
 
         html {
             scroll-behavior: smooth;
-            font-size: 19px;
+            font-size: 20px;
         }
 
         body {
@@ -513,6 +513,15 @@
         .paper-links a:hover {
             background: var(--blue-pale);
             border-color: var(--blue-accent);
+        }
+
+        .paper-links a.press {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .paper-links a.press:hover {
+            color: var(--blue-accent);
         }
 
         .paper-abstract {
@@ -1045,7 +1054,7 @@
                 <div class="paper-title"><a href="papers/alekseev-giglio-maingi-selgrad-stroebel-2024.pdf">A Quantity-Based Approach to Constructing Climate Risk Hedge Portfolios</a></div>
                 <div class="paper-authors">with Georgij Alekseev, Quinn Maingi, Julia Selgrad, and Johannes Stroebel</div>
                 <div class="paper-journal"><strong>Journal of Finance</strong>, forthcoming</div>
-                <div class="paper-award">Best Paper in Asset Pricing, 2022 SFS Cavalcade; Two Sigma Award, 2022; Best Paper on Investment Management, 2022 WFA</div>
+                <div class="paper-award">Best Paper in Asset Pricing, 2022 SFS Cavalcade; Two Sigma Award, Best Paper on Investment Management, 2022 WFA Meetings</div>
             </div>
 
             <div class="paper">
@@ -1070,6 +1079,7 @@
                 <div class="paper-award">Northwestern University Moskowitz Prize for sustainable finance research, 2023; Berkeley Haas Sustainable Business Research Prize, 2023</div>
                 <div class="paper-links">
                     <a href="http://www.biodiversityrisk.org/" target="_blank">Data</a>
+                    <a href="https://public.unpri.org/does-biodiversity-risk-affect-asset-prices/11878.article" target="_blank" class="press">PRI</a>
                 </div>
             </div>
 
@@ -1086,6 +1096,10 @@
                 <div class="paper-authors">with Matteo Maggiori, Johannes Stroebel, Zhenhao Tan, Stephen Utkus, and Xiao Xu</div>
                 <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2025), 164</div>
                 <div class="paper-award">Northwestern University Moskowitz Prize for sustainable finance research (honorable mention)</div>
+                <div class="paper-links">
+                    <a href="https://corpgov.law.harvard.edu/2023/04/28/four-facts-about-esg-beliefs-and-investor-portfolios/" target="_blank" class="press">HLS Blog</a>
+                    <a href="https://www.wsj.com/finance/investing/esg-investors-ethical-motives-9e5a5125" target="_blank" class="press">WSJ</a>
+                </div>
             </div>
 
             <div class="paper">
@@ -1121,7 +1135,7 @@
                 <div class="paper-authors">with Ian Dew-Becker</div>
                 <div class="paper-journal"><strong>American Economic Journal: Macroeconomics</strong> (2023), 15(2): 65–96</div>
                 <div class="paper-links">
-                    <a href="data/dew-becker-giglio-aej-2023-data.zip">Data</a>
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
                 </div>
             </div>
 
@@ -1152,6 +1166,10 @@
                 <div class="paper-authors">with Matteo Maggiori, Krishna Rao, Johannes Stroebel, and Andreas Weber</div>
                 <div class="paper-journal"><strong>Review of Financial Studies</strong> (2021), 34(8): 3527–3571</div>
                 <div class="paper-award">RFS Editor's Choice Article; RFS Michael Brennan Best Paper Award Runner Up, 2022</div>
+                <div class="paper-links">
+                    <a href="http://www.voxeu.org/article/discounting-climate-change-investments" target="_blank" class="press">VoxEU</a>
+                    <a href="https://globalriskinstitute.org/publications/cost-benefit-evaluation-of-investments-in-climate-change-abatement-2/" target="_blank" class="press">Global Risk Institute</a>
+                </div>
             </div>
 
             <div class="paper">
@@ -1182,6 +1200,9 @@
                 <div class="paper-award">2021 AQR Insight Award (Distinguished Paper); Best Behavioral Finance Paper, Midwest Finance Association Meetings 2020; Yuki Arai Faculty Research Prize for Finance 2019</div>
                 <div class="paper-links">
                     <a href="https://www.aeaweb.org/content/file?id=14305" target="_blank">Online Appendix</a>
+                    <a href="https://www.nber.org/digest/jun19/w25744.shtml" target="_blank" class="press">NBER Digest</a>
+                    <a href="https://www.wsj.com/articles/you-dear-investor-are-patient-prudent-and-calm-11555689601" target="_blank" class="press">WSJ</a>
+                    <a href="https://voxeu.org/article/survey-beliefs-and-portfolio-allocations" target="_blank" class="press">VoxEU</a>
                 </div>
             </div>
 
@@ -1198,7 +1219,7 @@
                 <div class="paper-authors">with Ian Dew-Becker and Bryan Kelly</div>
                 <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2021), 142: 23–45</div>
                 <div class="paper-links">
-                    <a href="data/dew-becker-giglio-kelly-jfe-2021-data.zip">Data</a>
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
                     <a href="papers/dew-becker-giglio-kelly-jfe-2021-appendix.pdf">Online Appendix</a>
                 </div>
             </div>
@@ -1232,7 +1253,7 @@
                 <div class="paper-journal"><strong>Review of Economic Studies</strong> (2020), 87(1): 40–76</div>
                 <div class="paper-authors" style="font-style: italic;">Previous title: "Contractionary Volatility or Volatile Contractions?"</div>
                 <div class="paper-links">
-                    <a href="data/berger-dew-becker-giglio-res-2020-data.zip">Data</a>
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
                     <a href="papers/berger-dew-becker-giglio-res-2020-appendix.pdf">Online Appendix</a>
                 </div>
             </div>
@@ -1243,7 +1264,9 @@
                 <div class="paper-authors">with Robert Engle, Bryan Kelly, Heebum Lee, and Johannes Stroebel</div>
                 <div class="paper-journal"><strong>Review of Financial Studies</strong> (2020), 33(3): 1184–1216</div>
                 <div class="paper-links">
-                    <a href="data/engle-giglio-kelly-lee-stroebel-rfs-2020-data.zip">Data</a>
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
+                    <a href="https://voxeu.org/article/hedging-climate-change-news" target="_blank" class="press">VoxEU</a>
+                    <a href="https://www.nytimes.com/2020/01/24/business/green-investments-climate-change.html" target="_blank" class="press">NYT</a>
                 </div>
             </div>
 
@@ -1276,7 +1299,7 @@
                 <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2017), 123(2): 225–250</div>
                 <div class="paper-award">Lead Article</div>
                 <div class="paper-links">
-                    <a href="data/dew-becker-giglio-le-rodriguez-jfe-2017-data.zip">Data</a>
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
                     <a href="papers/dew-becker-giglio-le-rodriguez-jfe-2017-appendix.pdf">Online Appendix</a>
                 </div>
             </div>
@@ -1293,7 +1316,7 @@
 
             <div class="paper">
                 <div class="paper-number">8.</div>
-                <div class="paper-title"><a href="https://drive.google.com/open?id=0B-rnPpVUb1kib1FKenA4WTNDenM" target="_blank">No-Bubble Condition: Model-Free Tests in Housing Markets</a></div>
+                <div class="paper-title"><a href="papers/giglio-maggiori-stroebel-ecma-2016.pdf">No-Bubble Condition: Model-Free Tests in Housing Markets</a></div>
                 <div class="paper-authors">with Matteo Maggiori and Johannes Stroebel</div>
                 <div class="paper-journal"><strong>Econometrica</strong> (2016), 84(3): 1047–1091</div>
                 <div class="paper-links">
@@ -1310,7 +1333,10 @@
                 <div class="paper-award">Lead Article; Fama-DFA Prize for the Best Paper Published in the Journal of Financial Economics (Asset Pricing), 2016; Q-Group Roger F. Murray Prize (3rd prize), 2015</div>
                 <div class="paper-links">
                     <a href="papers/giglio-kelly-pruitt-jfe-2016-appendix.pdf">Online Appendix</a>
-                    <a href="data/giglio-kelly-pruitt-jfe-2016-data.zip">Data</a>
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
+                    <a href="http://www.moneyandbanking.com/commentary/2015/4/13/the-mythic-quest-for-early-warnings" target="_blank" class="press">MoneyAndBanking.com</a>
+                    <a href="http://voxeu.org/article/evaluating-systemic-risk-proxies-empirically" target="_blank" class="press">VoxEU</a>
+                    <a href="https://bfi.uchicago.edu/feature-story/seeking-signals-financial-collapse" target="_blank" class="press">BFI</a>
                 </div>
             </div>
 
@@ -1330,7 +1356,12 @@
                 <div class="paper-links">
                     <a href="papers/giglio-maggiori-stroebel-qje-2015-appendix.pdf">Online Appendix</a>
                     <a href="http://www.nber.org/papers/w20133" target="_blank">NBER WP Version</a>
-                    <a href="data/giglio-maggiori-stroebel-qje-2015-data.zip">Data</a>
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
+                    <a href="http://www.forbes.com/sites/richardgreen/2014/03/04/people-care-a-lot-about-future-people-they-will-never-meet/" target="_blank" class="press">Forbes</a>
+                    <a href="http://www.economist.com/blogs/freeexchange/2014/05/long-run" target="_blank" class="press">Economist (May 2014)</a>
+                    <a href="http://www.nationalreview.com/agenda/378427/we-should-discount-costs-climate-change-maybe-not-much-patrick-brennan" target="_blank" class="press">National Review</a>
+                    <a href="http://www.nber.org/digest/oct14/w20133.html" target="_blank" class="press">NBER Digest</a>
+                    <a href="http://www.economist.com/blogs/freeexchange/2015/04/very-long-run-discount-rates" target="_blank" class="press">Economist (Apr 2015)</a>
                 </div>
             </div>
 
@@ -1340,6 +1371,9 @@
                 <div class="paper-authors">with Kelly Shue</div>
                 <div class="paper-journal"><strong>Review of Financial Studies</strong> (2014), 27(12): 3389–3440</div>
                 <div class="paper-award">Lead Article; RFS Editor's Choice Article; Winner, UBS Global Asset Management Award for Research in Investments, FRA Meeting 2012</div>
+                <div class="paper-links">
+                    <a href="http://www.chicagobooth.edu/capideas/magazine/fall-2013/extra-extra-investors-profit" target="_blank" class="press">Capital Ideas</a>
+                </div>
             </div>
 
             <div class="paper">
@@ -1369,6 +1403,7 @@
                 <div class="paper-journal"><strong>American Economic Review</strong> (2011), 101(5): 2108–2131</div>
                 <div class="paper-links">
                     <a href="papers/campbell-giglio-pathak-aer-2011-appendix.pdf">Online Appendix</a>
+                    <a href="https://www.nber.org/digest/jul09/forced-sales-and-house-prices?page=1&perPage=50" target="_blank" class="press">NBER Digest</a>
                 </div>
             </div>
 
@@ -1955,6 +1990,7 @@
                 <div class="paper-title"><a href="papers/alekseev-giglio-maingi-selgrad-stroebel-2024.pdf">A Quantity-Based Approach to Constructing Climate Risk Hedge Portfolios</a></div>
                 <div class="paper-authors">with Georgij Alekseev, Quinn Maingi, Julia Selgrad, and Johannes Stroebel</div>
                 <div class="paper-journal"><strong>Journal of Finance</strong>, forthcoming</div>
+                <div class="paper-award">Best Paper in Asset Pricing, 2022 SFS Cavalcade; Two Sigma Award, Best Paper on Investment Management, 2022 WFA Meetings</div>
             </div>
 
             <div class="paper topic-paper">
@@ -1967,6 +2003,11 @@
                 <div class="paper-title"><a href="papers/giglio-kuchler-stroebel-zeng-2023.pdf">Biodiversity Risk</a></div>
                 <div class="paper-authors">with Theresa Kuchler, Johannes Stroebel, and Xuran Zeng</div>
                 <div class="paper-journal"><strong>Review of Finance</strong> (Special Issue for Biodiversity and Natural Resource Finance), forthcoming</div>
+                <div class="paper-award">Northwestern University Moskowitz Prize for sustainable finance research, 2023; Berkeley Haas Sustainable Business Research Prize, 2023</div>
+                <div class="paper-links">
+                    <a href="http://www.biodiversityrisk.org/" target="_blank">Data</a>
+                    <a href="https://public.unpri.org/does-biodiversity-risk-affect-asset-prices/11878.article" target="_blank" class="press">PRI</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
@@ -1979,6 +2020,11 @@
                 <div class="paper-title"><a href="papers/giglio-maggiori-stroebel-tan-utkus-xu-2025.pdf">Four Facts about ESG Beliefs and Investor Portfolios</a></div>
                 <div class="paper-authors">with Matteo Maggiori, Johannes Stroebel, Zhenhao Tan, Stephen Utkus, and Xiao Xu</div>
                 <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2025), 164</div>
+                <div class="paper-award">Northwestern University Moskowitz Prize for sustainable finance research (honorable mention)</div>
+                <div class="paper-links">
+                    <a href="https://corpgov.law.harvard.edu/2023/04/28/four-facts-about-esg-beliefs-and-investor-portfolios/" target="_blank" class="press">HLS Blog</a>
+                    <a href="https://www.wsj.com/finance/investing/esg-investors-ethical-motives-9e5a5125" target="_blank" class="press">WSJ</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
@@ -1991,6 +2037,11 @@
                 <div class="paper-title"><a href="papers/giglio-maggiori-rao-stroebel-weber-2021.pdf">Climate Change and Long-Run Discount Rates: Evidence from Real Estate</a></div>
                 <div class="paper-authors">with Matteo Maggiori, Krishna Rao, Johannes Stroebel, and Andreas Weber</div>
                 <div class="paper-journal"><strong>Review of Financial Studies</strong> (2021), 34(8): 3527–3571</div>
+                <div class="paper-award">RFS Editor's Choice Article; RFS Michael Brennan Best Paper Award Runner Up, 2022</div>
+                <div class="paper-links">
+                    <a href="http://www.voxeu.org/article/discounting-climate-change-investments" target="_blank" class="press">VoxEU</a>
+                    <a href="https://globalriskinstitute.org/publications/cost-benefit-evaluation-of-investments-in-climate-change-abatement-2/" target="_blank" class="press">Global Risk Institute</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
@@ -2003,6 +2054,11 @@
                 <div class="paper-title"><a href="papers/engle-giglio-kelly-lee-stroebel-rfs-2020.pdf">Hedging Climate Change News</a></div>
                 <div class="paper-authors">with Robert Engle, Bryan Kelly, Heebum Lee, and Johannes Stroebel</div>
                 <div class="paper-journal"><strong>Review of Financial Studies</strong> (2020), 33(3): 1184–1216</div>
+                <div class="paper-links">
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
+                    <a href="https://voxeu.org/article/hedging-climate-change-news" target="_blank" class="press">VoxEU</a>
+                    <a href="https://www.nytimes.com/2020/01/24/business/green-investments-climate-change.html" target="_blank" class="press">NYT</a>
+                </div>
             </div>
         </div>
     </div>
@@ -2034,24 +2090,41 @@
                 <div class="paper-title"><a href="papers/giglio-maggiori-stroebel-tan-utkus-xu-2025.pdf">Four Facts about ESG Beliefs and Investor Portfolios</a></div>
                 <div class="paper-authors">with Matteo Maggiori, Johannes Stroebel, Zhenhao Tan, Stephen Utkus, and Xiao Xu</div>
                 <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2025), 164</div>
+                <div class="paper-award">Northwestern University Moskowitz Prize for sustainable finance research (honorable mention)</div>
+                <div class="paper-links">
+                    <a href="https://corpgov.law.harvard.edu/2023/04/28/four-facts-about-esg-beliefs-and-investor-portfolios/" target="_blank" class="press">HLS Blog</a>
+                    <a href="https://www.wsj.com/finance/investing/esg-investors-ethical-motives-9e5a5125" target="_blank" class="press">WSJ</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/giglio-maggiori-stroebel-utkus-pnas-2021.pdf">The Joint Dynamics of Investor Beliefs and Trading during the COVID-19 Crash</a></div>
                 <div class="paper-authors">with Matteo Maggiori, Johannes Stroebel, and Stephen Utkus</div>
                 <div class="paper-journal"><strong>PNAS</strong> (2021), 118(4)</div>
+                <div class="paper-authors" style="font-style: italic;">Previously circulated as "Inside the Mind of a Stock Market Crash"</div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/giglio-maggiori-stroebel-utkus-aer-2021.pdf">Five Facts About Beliefs and Portfolios</a></div>
                 <div class="paper-authors">with Matteo Maggiori, Johannes Stroebel, and Steven Utkus</div>
                 <div class="paper-journal"><strong>American Economic Review</strong> (2021), 111(5): 1481–1522</div>
+                <div class="paper-award">2021 AQR Insight Award (Distinguished Paper); Best Behavioral Finance Paper, Midwest Finance Association Meetings 2020; Yuki Arai Faculty Research Prize for Finance 2019</div>
+                <div class="paper-links">
+                    <a href="https://www.aeaweb.org/content/file?id=14305" target="_blank">Online Appendix</a>
+                    <a href="https://www.nber.org/digest/jun19/w25744.shtml" target="_blank" class="press">NBER Digest</a>
+                    <a href="https://www.wsj.com/articles/you-dear-investor-are-patient-prudent-and-calm-11555689601" target="_blank" class="press">WSJ</a>
+                    <a href="https://voxeu.org/article/survey-beliefs-and-portfolio-allocations" target="_blank" class="press">VoxEU</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/giglio-shue-rfs-2014.pdf">No News is News: Do Markets Underreact to Nothing?</a></div>
                 <div class="paper-authors">with Kelly Shue</div>
                 <div class="paper-journal"><strong>Review of Financial Studies</strong> (2014), 27(12): 3389–3440</div>
+                <div class="paper-award">Lead Article; RFS Editor's Choice Article; Winner, UBS Global Asset Management Award for Research in Investments, FRA Meeting 2012</div>
+                <div class="paper-links">
+                    <a href="http://www.chicagobooth.edu/capideas/magazine/fall-2013/extra-extra-investors-profit" target="_blank" class="press">Capital Ideas</a>
+                </div>
             </div>
         </div>
     </div>
@@ -2073,6 +2146,9 @@
                 <div class="paper-title"><a href="papers/giglio-xiu-zhang-jf-2025.pdf">Test Assets and Weak Factors</a></div>
                 <div class="paper-authors">with Dacheng Xiu and Dake Zhang</div>
                 <div class="paper-journal"><strong>Journal of Finance</strong> (2025), 80(1), 259–319</div>
+                <div class="paper-links">
+                    <a href="https://drive.google.com/file/d/1ps61ntDVlFTCVys-s8vc5I0oJNfIJkf9/view?usp=sharing" target="_blank">Code</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
@@ -2085,18 +2161,31 @@
                 <div class="paper-title"><a href="papers/giglio-xiu-jpe-2021.pdf">Asset Pricing with Omitted Factors</a></div>
                 <div class="paper-authors">with Dacheng Xiu</div>
                 <div class="paper-journal"><strong>Journal of Political Economy</strong> (2021), 129(7): 1947–1990</div>
+                <div class="paper-award">Lead Article; Best Paper Prize, 2017 European Financial Association Conference</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-xiu-jpe-2021-appendix.pdf">Online Appendix</a>
+                    <a href="https://drive.google.com/file/d/1qmM7O0-HVHtHNZ96xgpP5gsBpoHDuwq6/view?usp=sharing" target="_blank">Code</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/giglio-liao-xiu-rfs-2021.pdf">Thousands of Alpha Tests</a></div>
                 <div class="paper-authors">with Yuan Liao and Dacheng Xiu</div>
                 <div class="paper-journal"><strong>Review of Financial Studies</strong> (2021), 34(7): 3456–3496</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-liao-xiu-rfs-2021-appendix.pdf">Online Appendix</a>
+                    <a href="https://drive.google.com/file/d/1NlYfH5oDPIPOSYAcIO79aceVMDznUXc7/view?usp=sharing" target="_blank">Code</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/feng-giglio-xiu-jf-2020.pdf">Taming the Factor Zoo: a Test of New Factors</a></div>
                 <div class="paper-authors">with Guanhao Feng and Dacheng Xiu</div>
                 <div class="paper-journal"><strong>Journal of Finance</strong> (2020), 75(3): 1327–1370</div>
+                <div class="paper-award">AQR Insight Award 2018, First Prize</div>
+                <div class="paper-links">
+                    <a href="papers/feng-giglio-xiu-jf-2020-appendix.pdf">Online Appendix</a>
+                </div>
             </div>
         </div>
     </div>
@@ -2116,30 +2205,49 @@
                 <div class="paper-title"><a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/jofi.13394" target="_blank">Equity Term Structures without Dividend Strips Data</a></div>
                 <div class="paper-authors">with Bryan Kelly and Serhiy Kozak</div>
                 <div class="paper-journal"><strong>Journal of Finance</strong> (2024), 79(6)</div>
+                <div class="paper-links">
+                    <a href="#data" onclick="showSection('data', document.querySelector('[href=\'#data\']'))">Data</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/giglio-maggiori-rao-stroebel-weber-2021.pdf">Climate Change and Long-Run Discount Rates: Evidence from Real Estate</a></div>
                 <div class="paper-authors">with Matteo Maggiori, Krishna Rao, Johannes Stroebel, and Andreas Weber</div>
                 <div class="paper-journal"><strong>Review of Financial Studies</strong> (2021), 34(8): 3527–3571</div>
+                <div class="paper-award">RFS Editor's Choice Article; RFS Michael Brennan Best Paper Award Runner Up, 2022</div>
+                <div class="paper-links">
+                    <a href="http://www.voxeu.org/article/discounting-climate-change-investments" target="_blank" class="press">VoxEU</a>
+                    <a href="https://globalriskinstitute.org/publications/cost-benefit-evaluation-of-investments-in-climate-change-abatement-2/" target="_blank" class="press">Global Risk Institute</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/campbell-giglio-polk-turley-jfe-2018.pdf">An Intertemporal CAPM with Stochastic Volatility</a></div>
                 <div class="paper-authors">with John Campbell, Christopher Polk, and Bob Turley</div>
                 <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2018), 128(2): 207–233</div>
+                <div class="paper-award">Lead Article; Fama-DFA Prize for the Best Paper Published in the Journal of Financial Economics (Asset Pricing), 2018</div>
+                <div class="paper-links">
+                    <a href="papers/campbell-giglio-polk-turley-jfe-2018-appendix.pdf">Online Appendix</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/giglio-kelly-qje-2018.pdf">Excess Volatility: Beyond Discount Rates</a></div>
                 <div class="paper-authors">with Bryan Kelly</div>
                 <div class="paper-journal"><strong>Quarterly Journal of Economics</strong> (2018), 133(1): 71–127</div>
+                <div class="paper-award">Finalist, AQR Insight Award, 2016; Napa Conference Best Paper Award, 2016</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-kelly-qje-2018-appendix.pdf">Online Appendix</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/dew-becker-giglio-rfs-2016.pdf">Asset Pricing in the Frequency Domain: Theory and Empirics</a></div>
                 <div class="paper-authors">with Ian Dew-Becker</div>
                 <div class="paper-journal"><strong>Review of Financial Studies</strong> (2016), 29(8): 2029–2068</div>
+                <div class="paper-links">
+                    <a href="papers/dew-becker-giglio-rfs-2016-appendix.pdf">Online Appendix</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
@@ -2152,12 +2260,26 @@
                 <div class="paper-title"><a href="http://qje.oxfordjournals.org/content/130/1/1.full.pdf" target="_blank">Very Long-Run Discount Rates</a></div>
                 <div class="paper-authors">with Matteo Maggiori and Johannes Stroebel</div>
                 <div class="paper-journal"><strong>Quarterly Journal of Economics</strong> (2015), 130(1): 1–53</div>
+                <div class="paper-award">QJE Lead Article; QJE Editor's Choice Article; Jacob Gold &amp; Associates Best Paper Prize, ASU Sonoran Winter Finance Conference, 2014; NYU Glucksman Institute Faculty Research Prize for the Best Paper in Finance, 2015</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-maggiori-stroebel-qje-2015-appendix.pdf">Online Appendix</a>
+                    <a href="http://www.nber.org/papers/w20133" target="_blank">NBER WP Version</a>
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
+                    <a href="http://www.forbes.com/sites/richardgreen/2014/03/04/people-care-a-lot-about-future-people-they-will-never-meet/" target="_blank" class="press">Forbes</a>
+                    <a href="http://www.economist.com/blogs/freeexchange/2014/05/long-run" target="_blank" class="press">Economist (May 2014)</a>
+                    <a href="http://www.nationalreview.com/agenda/378427/we-should-discount-costs-climate-change-maybe-not-much-patrick-brennan" target="_blank" class="press">National Review</a>
+                    <a href="http://www.nber.org/digest/oct14/w20133.html" target="_blank" class="press">NBER Digest</a>
+                    <a href="http://www.economist.com/blogs/freeexchange/2015/04/very-long-run-discount-rates" target="_blank" class="press">Economist (Apr 2015)</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/campbell-giglio-polk-raps-2013.pdf">Hard Times</a></div>
                 <div class="paper-authors">with John Campbell and Christopher Polk</div>
                 <div class="paper-journal"><strong>Review of Asset Pricing Studies</strong> (2013), 3(1): 95–132</div>
+                <div class="paper-links">
+                    <a href="papers/campbell-giglio-polk-raps-2013-appendix.pdf">Online Appendix</a>
+                </div>
             </div>
         </div>
     </div>
@@ -2183,6 +2305,9 @@
                 <div class="paper-title"><a href="papers/dew-becker-giglio-aej-2023.pdf">Cross-Sectional Uncertainty and the Business Cycle: Evidence from 40 Years of Options Data</a></div>
                 <div class="paper-authors">with Ian Dew-Becker</div>
                 <div class="paper-journal"><strong>American Economic Journal: Macroeconomics</strong> (2023), 15(2): 65–96</div>
+                <div class="paper-links">
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
@@ -2195,30 +2320,55 @@
                 <div class="paper-title"><a href="papers/dew-becker-giglio-kelly-jfe-2021.pdf">Hedging Macroeconomic and Financial Uncertainty and Volatility</a></div>
                 <div class="paper-authors">with Ian Dew-Becker and Bryan Kelly</div>
                 <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2021), 142: 23–45</div>
+                <div class="paper-links">
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
+                    <a href="papers/dew-becker-giglio-kelly-jfe-2021-appendix.pdf">Online Appendix</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/berger-dew-becker-giglio-res-2020.pdf">Uncertainty Shocks as Second-Moment News Shocks</a></div>
                 <div class="paper-authors">with David Berger and Ian Dew-Becker</div>
                 <div class="paper-journal"><strong>Review of Economic Studies</strong> (2020), 87(1): 40–76</div>
+                <div class="paper-authors" style="font-style: italic;">Previous title: "Contractionary Volatility or Volatile Contractions?"</div>
+                <div class="paper-links">
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
+                    <a href="papers/berger-dew-becker-giglio-res-2020-appendix.pdf">Online Appendix</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/dew-becker-giglio-le-rodriguez-jfe-2017.pdf">The Price of Variance Risk</a></div>
                 <div class="paper-authors">with Ian Dew-Becker, Anh Le, and Marius Rodriguez</div>
                 <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2017), 123(2): 225–250</div>
+                <div class="paper-award">Lead Article</div>
+                <div class="paper-links">
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
+                    <a href="papers/dew-becker-giglio-le-rodriguez-jfe-2017-appendix.pdf">Online Appendix</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/giglio-kelly-pruitt-jfe-2016.pdf">Systemic Risk and the Macroeconomy: An Empirical Evaluation</a></div>
                 <div class="paper-authors">with Bryan Kelly and Seth Pruitt</div>
                 <div class="paper-journal"><strong>Journal of Financial Economics</strong> (2016), 119(3): 457–471</div>
+                <div class="paper-award">Lead Article; Fama-DFA Prize for the Best Paper Published in the Journal of Financial Economics (Asset Pricing), 2016; Q-Group Roger F. Murray Prize (3rd prize), 2015</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-kelly-pruitt-jfe-2016-appendix.pdf">Online Appendix</a>
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
+                    <a href="http://www.moneyandbanking.com/commentary/2015/4/13/the-mythic-quest-for-early-warnings" target="_blank" class="press">MoneyAndBanking.com</a>
+                    <a href="http://voxeu.org/article/evaluating-systemic-risk-proxies-empirically" target="_blank" class="press">VoxEU</a>
+                    <a href="https://bfi.uchicago.edu/feature-story/seeking-signals-financial-collapse" target="_blank" class="press">BFI</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/giglio-severo-jme-2012.pdf">Intangible Capital, Relative Asset Shortages, and Bubbles</a></div>
                 <div class="paper-authors">with Tiago Severo</div>
                 <div class="paper-journal"><strong>Journal of Monetary Economics</strong> (2012), 59: 303–317</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-severo-jme-2012-appendix.pdf">Online Appendix</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
@@ -2238,12 +2388,21 @@
                 <div class="paper-title"><a href="papers/giglio-maggiori-rao-stroebel-weber-2021.pdf">Climate Change and Long-Run Discount Rates: Evidence from Real Estate</a></div>
                 <div class="paper-authors">with Matteo Maggiori, Krishna Rao, Johannes Stroebel, and Andreas Weber</div>
                 <div class="paper-journal"><strong>Review of Financial Studies</strong> (2021), 34(8): 3527–3571</div>
+                <div class="paper-award">RFS Editor's Choice Article; RFS Michael Brennan Best Paper Award Runner Up, 2022</div>
+                <div class="paper-links">
+                    <a href="http://www.voxeu.org/article/discounting-climate-change-investments" target="_blank" class="press">VoxEU</a>
+                    <a href="https://globalriskinstitute.org/publications/cost-benefit-evaluation-of-investments-in-climate-change-abatement-2/" target="_blank" class="press">Global Risk Institute</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
-                <div class="paper-title"><a href="https://drive.google.com/open?id=0B-rnPpVUb1kib1FKenA4WTNDenM" target="_blank">No-Bubble Condition: Model-Free Tests in Housing Markets</a></div>
+                <div class="paper-title"><a href="papers/giglio-maggiori-stroebel-ecma-2016.pdf">No-Bubble Condition: Model-Free Tests in Housing Markets</a></div>
                 <div class="paper-authors">with Matteo Maggiori and Johannes Stroebel</div>
                 <div class="paper-journal"><strong>Econometrica</strong> (2016), 84(3): 1047–1091</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-maggiori-stroebel-ecma-2016-appendix.pdf">Online Appendix</a>
+                    <a href="papers/giglio-maggiori-stroebel-ecma-2016-reply.pdf">Reply</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
@@ -2256,12 +2415,27 @@
                 <div class="paper-title"><a href="http://qje.oxfordjournals.org/content/130/1/1.full.pdf" target="_blank">Very Long-Run Discount Rates</a></div>
                 <div class="paper-authors">with Matteo Maggiori and Johannes Stroebel</div>
                 <div class="paper-journal"><strong>Quarterly Journal of Economics</strong> (2015), 130(1): 1–53</div>
+                <div class="paper-award">QJE Lead Article; QJE Editor's Choice Article; Jacob Gold &amp; Associates Best Paper Prize, ASU Sonoran Winter Finance Conference, 2014; NYU Glucksman Institute Faculty Research Prize for the Best Paper in Finance, 2015</div>
+                <div class="paper-links">
+                    <a href="papers/giglio-maggiori-stroebel-qje-2015-appendix.pdf">Online Appendix</a>
+                    <a href="http://www.nber.org/papers/w20133" target="_blank">NBER WP Version</a>
+                    <a href="javascript:void(0)" onclick="showSection('data')">Data</a>
+                    <a href="http://www.forbes.com/sites/richardgreen/2014/03/04/people-care-a-lot-about-future-people-they-will-never-meet/" target="_blank" class="press">Forbes</a>
+                    <a href="http://www.economist.com/blogs/freeexchange/2014/05/long-run" target="_blank" class="press">Economist (May 2014)</a>
+                    <a href="http://www.nationalreview.com/agenda/378427/we-should-discount-costs-climate-change-maybe-not-much-patrick-brennan" target="_blank" class="press">National Review</a>
+                    <a href="http://www.nber.org/digest/oct14/w20133.html" target="_blank" class="press">NBER Digest</a>
+                    <a href="http://www.economist.com/blogs/freeexchange/2015/04/very-long-run-discount-rates" target="_blank" class="press">Economist (Apr 2015)</a>
+                </div>
             </div>
 
             <div class="paper topic-paper">
                 <div class="paper-title"><a href="papers/campbell-giglio-pathak-aer-2011.pdf">Forced Sales and House Prices</a></div>
                 <div class="paper-authors">with John Campbell and Parag Pathak</div>
                 <div class="paper-journal"><strong>American Economic Review</strong> (2011), 101(5): 2108–2131</div>
+                <div class="paper-links">
+                    <a href="papers/campbell-giglio-pathak-aer-2011-appendix.pdf">Online Appendix</a>
+                    <a href="https://www.nber.org/digest/jul09/forced-sales-and-house-prices?page=1&perPage=50" target="_blank" class="press">NBER Digest</a>
+                </div>
             </div>
         </div>
     </div>
