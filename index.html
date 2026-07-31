@@ -2484,19 +2484,19 @@
         btn.textContent = abstract.classList.contains('open') ? 'Hide Abstract' : 'Abstract';
     }
 
-    // Handle hash navigation
-    window.addEventListener('hashchange', () => {
-        const id = location.hash.slice(1);
+    // Handle hash navigation (back/forward buttons, deep links)
+    function navigateToHash() {
+        const id = location.hash.slice(1) || 'home';
+        const section = document.getElementById(id);
+        if (!section || !section.classList.contains('section')) return;
         const link = document.querySelector(`.sidebar-nav a[href="#${id}"]`);
-        if (link) showSection(id, link);
-    });
+        showSection(id, link);
+    }
+
+    window.addEventListener('hashchange', navigateToHash);
 
     // Load correct section on page load
-    if (location.hash) {
-        const id = location.hash.slice(1);
-        const link = document.querySelector(`.sidebar-nav a[href="#${id}"]`);
-        if (link) showSection(id, link);
-    }
+    if (location.hash) navigateToHash();
 </script>
 
 </body>
