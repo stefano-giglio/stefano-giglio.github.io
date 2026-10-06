@@ -137,7 +137,7 @@ Published filenames add a journal slug before the year, using the **publication*
 
 **Forthcoming papers have no publication year yet**, so name them with the slug and no year: `giglio-xiu-zhang-jasa.pdf`, `giglio-kuchler-stroebel-wang-jfip.pdf`. Add the year only once the issue is assigned.
 
-**Watch for filename collisions between different papers by the same authors.** `giglio-dew-becker-molavi-2025.pdf` and `giglio-dew-becker-molavi-2026.pdf` are two *different* papers, distinguished only by year. Before overwriting or deleting, confirm which paper a file actually is (`pdftotext -f 1 -l 1 …`) rather than assuming the year-stamped name refers to the paper you're updating.
+**Watch for filename collisions between different papers by the same authors.** `giglio-dew-becker-molavi-2026.pdf` (inflation expectations) and `giglio-dew-becker-molavi-nonlinearity-2026.pdf` (learning/nonlinearity) are two *different* papers; when a new version would collide with another paper's name, add a short topic word before the year rather than overwrite. Before overwriting or deleting, confirm which paper a file actually is (`pdftotext -f 1 -l 1 …`) rather than assuming the year-stamped name refers to the paper you're updating.
 
 ### 4. Move the entry between sections
 
